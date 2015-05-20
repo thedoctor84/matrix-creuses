@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <map>
+#include "Mat_aleatoire.h"
 using namespace std;
 
 //matrice aléatoire avec un % de 0 (ex: mat_alea(70) donne 70% de 0 et le reste aléatoire)
@@ -12,13 +12,11 @@ int rand_entre_min_et_max(int min, int max){
     return rand()%(max-min) + min;
 }
 
-
-
-map<pair<int,int>,int> generer_mat_aleatoire(int pourcentage_zero)
+map<pair<int,int>,int> generer_mat_aleatoire(int pourcentage_zero,int& nbLigne,int& nbCol)
 
 {
-	int nbLigne = rand_entre_min_et_max(100,200);
-	int nbCol = rand_entre_min_et_max(100,200);
+	nbLigne = rand_entre_min_et_max(10,20);
+	nbCol = rand_entre_min_et_max(10,20);
 	cout << "Nombre de lignes : " << nbLigne << endl;
 	cout << "Nombre de Colonnes : " << nbCol << endl;
 	map<pair<int,int>,int> MC;
@@ -27,7 +25,7 @@ map<pair<int,int>,int> generer_mat_aleatoire(int pourcentage_zero)
 	int nombresNonNuls = (int)((100-pourcentage_zero)*nbLigne*nbCol/100);
 	cout << "Nombre de case non nulles : " << nombresNonNuls << endl;
 
-	int nbAlea = rand_entre_min_et_max(0,100);
+	int nbAlea = rand_entre_min_et_max(1,100);
 	int indLigAlea = rand_entre_min_et_max(0,nbLigne);
 	int indColAlea = rand_entre_min_et_max(0,nbCol);
 	bool existeDeja;
@@ -38,7 +36,7 @@ map<pair<int,int>,int> generer_mat_aleatoire(int pourcentage_zero)
 
 	while(nbDeNbNonNulsInseres < nombresNonNuls)
 	{
-		nbAlea = rand_entre_min_et_max(0,100);
+		nbAlea = rand_entre_min_et_max(1,100);
 		indLigAlea = rand_entre_min_et_max(0,nbLigne);
 		indColAlea = rand_entre_min_et_max(0,nbCol);
 		existeDeja = false;
@@ -59,11 +57,12 @@ map<pair<int,int>,int> generer_mat_aleatoire(int pourcentage_zero)
 }
 
 
-int main() 
+/*int main() 
 {
 	srand(time(NULL));
-	map<pair<int,int>,int> MapTest = generer_mat_aleatoire(95);
+	int test1(0),test2(0); 
+	map<pair<int,int>,int> MapTest = generer_mat_aleatoire(95,test1,test2);
 	//for(int i=0; i < 100; i++)	cout << "nb : "<< rand_ligne_col() << endl;
 
 	return 0;
-}
+}*/

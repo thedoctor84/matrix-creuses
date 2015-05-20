@@ -2,6 +2,7 @@
 #include <map>
 #include "Operation.h"
 #include "flots.h"
+#include "Mat_aleatoire.h"
 #define YELLOW "\033[01;33m"
 using namespace std;
 
@@ -41,6 +42,16 @@ int main()
     cout << YELLOW << "\n> SOUSTRACTION : \n\n";
     Affiche(SOUSTRACTION(A,10,10,TRANSPOSEE(A,10,10),10,10),10,10);
 
+
+    cout << YELLOW << "\n> AFFICHAGE MAP ALEATOIRE : \n\n";
+    int nbC = 0;
+    int nbL = 0;
+
+    
+    map <pair<int, int>, int> Alea = generer_mat_aleatoire(95,nbL,nbC);
+    Affiche(Alea,nbL,nbC);
+
+    Sauvegarde("frite",Alea,nbL,nbC);
 
 	return 0; 
 }
