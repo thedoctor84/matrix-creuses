@@ -89,14 +89,3 @@ void UpdateS(string nom_sauvegarde)
 		cout << "Impossible d'ouvrir le fichier" << endl;
 	}
 }
-
-int main()
-{
-	UpdateS("Mabite");
-	UpdateS("Mabite2");
-	string* tot = recherchefich(2);
-	cout << tot[0] <<endl;
-	cout << tot[1] <<endl;
-	
-	return 0;
-}
