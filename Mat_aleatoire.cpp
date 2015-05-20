@@ -14,7 +14,8 @@ int rand_entre_min_et_max(int min, int max){
 
 
 
-/*map<pair<int,int>,int>*/ void generer_mat_aleatoire(int pourcentage_zero)
+map<pair<int,int>,int> generer_mat_aleatoire(int pourcentage_zero)
+
 {
 	int nbLigne = rand_entre_min_et_max(100,200);
 	int nbCol = rand_entre_min_et_max(100,200);
@@ -53,13 +54,15 @@ int rand_entre_min_et_max(int min, int max){
 			 nbDeNbNonNulsInseres++;
 		}
 	}
+
+	return MC;
 }
 
 
 int main() 
 {
 	srand(time(NULL));
-	generer_mat_aleatoire(95);
+	map<pair<int,int>,int> MapTest = generer_mat_aleatoire(95);
 	//for(int i=0; i < 100; i++)	cout << "nb : "<< rand_ligne_col() << endl;
 
 	return 0;
