@@ -1,7 +1,7 @@
 /**
  * \file          flots.cpp
  * \author    Grégoire Esteban
- * \version   4.0
+ * \version   5.0
  * \date       20 Mai 2015
  * \brief       Effectue les operations d'entrés - sorties sur les fichiers de matrices	    
  *                 
@@ -12,6 +12,10 @@
 #include <fstream>
 #include <string>
 #include <map>
+
+#define RED "\033[01;31m"
+#define BLUE "\033[01;34m"
+#define BASIC "\033[00;00m"
 
 using namespace std; /** \namespace std */
 
@@ -25,6 +29,7 @@ using namespace std; /** \namespace std */
  * \param    nbrElemNN		Entier représentant le nombre de valeurs différentes de 0
  * \return    un \e booléen selon l'erreur d'ouverture de fichier
  */
+
 
 bool Chargement(string matr, map <pair<int, int>, int>& matrice, int& dimL, int& dimC, int& nbrElemNN)
 {
@@ -88,12 +93,12 @@ void Affiche(map <pair<int, int>, int> matrice, int dimL, int dimC)
 		{
 			if((it->first.first == i) && (it->first.second == j))
 			{
-				cout <<it->second << '\t';
+				cout<<RED <<it->second << '\t' << BASIC;
 				it++;
 			}
 			else
 			{
-				cout<<"0\t";
+				cout<< BLUE << "0\t" << BASIC;;
 			}
 		}
 		cout<<endl;
