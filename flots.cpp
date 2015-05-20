@@ -12,6 +12,7 @@
 #include "flots.h"
 
 #define RED "\033[01;31m"
+#define GREEN "\033[01;32m"
 #define BLUE "\033[01;34m"
 #define BASIC "\033[00;00m"
 
@@ -19,8 +20,9 @@ using namespace std; /** \namespace std */
 
 /**
  * \brief       Charge une matrice à partir d'un fichier texte 
- * \details    Le schéma d'exportation se fait d'abord en inscrivant les paramètres de la matrice
- *				puis chaque valeur est écrite sur une ligne selon le format L C V (Ligne Colonne Valeur) 
+ * \details    Le schéma d'importation se fait d'abord en chargeant les paramètres de la matrice
+ *				puis chaque valeur est récupéré via ses indices de lignes puis de colonne, et enfin
+ *				la valeur est insérée dans la matrice.
  * \param    matrice		Référence de la matrice qui va acceuillir les données du fichier
  * \param    dimL   		Entier représentant le nombre de lignes totale de la matrice 
  * \param    dimC			Entier représentant le nombre de colonnes totale de la matrice
@@ -31,7 +33,7 @@ using namespace std; /** \namespace std */
 
 bool Chargement(string matr, map <pair<int, int>, int>& matrice, int& dimL, int& dimC, int& nbrElemNN)
 {
-	ifstream ouv(matr.c_str(),ios::in);
+	ifstream ouv((matr+".txt").c_str(),ios::in);
 
 	if(ouv)
 	{
@@ -72,9 +74,19 @@ bool Chargement(string matr, map <pair<int, int>, int>& matrice, int& dimL, int&
 	}
 }
 
+/**
+ * \brief       Sauvegarde une matrice dans un fichier texte 
+ * \details    Le schéma d'exportation se fait d'abord en inscrivant les paramètres de la matrice
+ *				puis chaque valeur est écrite sur une ligne selon le format L C V (Ligne Colonne Valeur) 
+ * \param    matrice		Référence de la matrice qui contient les données
+ * \param    dimL   		Entier représentant le nombre de lignes totale de la matrice 
+ * \param    dimC			Entier représentant le nombre de colonnes totale de la matrice
+ * \return    un \e booléen selon l'erreur d'ouverture de fichier
+ */
+
 bool Sauvegarde(string smatr, map <pair<int, int>, int>& matrice, int& dimL, int& dimC)
 {
-	ofstream save(smatr.c_str(), ios::out | ios::trunc);
+	ofstream save((smatr+".txt").c_str(), ios::out | ios::trunc);
 
 	if(save)
 	{
@@ -117,8 +129,16 @@ void Affiche(map <pair<int, int>, int> matrice, int dimL, int dimC)
 		{
 			if((it->first.first == i) && (it->first.second == j))
 			{
-				cout<<RED <<it->second << '\t' << BASIC;
-				it++;
+				if(it->second > 0)
+				{
+					cout<< RED << it->second << '\t' << BASIC;
+					it++;
+				}
+				else
+				{
+					cout<< GREEN << it->second << '\t' << BASIC;
+					it++;  
+				}
 			}
 			else
 			{
@@ -134,17 +154,16 @@ void Affiche(map <pair<int, int>, int> matrice, int dimL, int dimC)
         cout << "<<" << it->first.first << "," << it->first.second << ">,";
         cout << it->second << ">" << endl;
     }*/
-
 }
 
 
-int main()
+/*int main()
 {
 	int dimC;
 	int dimL;
 	int nbrElemNN;
 	map <pair<int,int>,int> michel;
-	if(!Chargement("4.txt",michel,dimL,dimC,nbrElemNN))
+	if(!Chargement("4",michel,dimL,dimC,nbrElemNN))
 	{
 		Affiche(michel,dimL,dimC);
 	}
@@ -156,6 +175,6 @@ int main()
 	Sauvegarde((name+".txt").c_str(), michel, dimL, dimC);
 	
 	return 0;                 
-}
+}*/
 
 
