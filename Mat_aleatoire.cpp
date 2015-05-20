@@ -16,8 +16,8 @@ int rand_entre_min_et_max(int min, int max){
 
 /*map<pair<int,int>,int>*/ void generer_mat_aleatoire(int pourcentage_zero)
 {
-	int nbLigne = rand_entre_min_et_max(5,10);
-	int nbCol = rand_entre_min_et_max(5,10);
+	int nbLigne = rand_entre_min_et_max(100,200);
+	int nbCol = rand_entre_min_et_max(100,200);
 	cout << "Nombre de lignes : " << nbLigne << endl;
 	cout << "Nombre de Colonnes : " << nbCol << endl;
 	map<pair<int,int>,int> MC;
@@ -26,22 +26,40 @@ int rand_entre_min_et_max(int min, int max){
 	int nombresNonNuls = (int)((100-pourcentage_zero)*nbLigne*nbCol/100);
 	cout << "Nombre de case non nulles : " << nombresNonNuls << endl;
 
+	int nbAlea = rand_entre_min_et_max(0,100);
+	int indLigAlea = rand_entre_min_et_max(0,nbLigne);
+	int indColAlea = rand_entre_min_et_max(0,nbCol);
+	bool existeDeja;
 
+	MC.insert(pair<pair<int, int>, int> (make_pair(indLigAlea, indColAlea), nbAlea));
 
-	  for (int i=0; i<=nbLigne; i++)
-        {
-            for (int j=0; j<=nbCol; j++)
-            {
-                MC.insert(pair<pair<int, int>, int> (make_pair(i, j), i+j));
-            }
-        }  
+	int nbDeNbNonNulsInseres = 1;
+
+	while(nbDeNbNonNulsInseres < nombresNonNuls)
+	{
+		nbAlea = rand_entre_min_et_max(0,100);
+		indLigAlea = rand_entre_min_et_max(0,nbLigne);
+		indColAlea = rand_entre_min_et_max(0,nbCol);
+		existeDeja = false;
+
+		for(it = MC.begin(); it != MC.end(); it++)
+		{
+			if (indLigAlea == it->first.first && indColAlea == it->first.second) existeDeja = true;
+		}
+
+		if (!existeDeja)
+		{
+			 MC.insert(pair<pair<int, int>, int> (make_pair(indLigAlea, indColAlea), nbAlea));
+			 nbDeNbNonNulsInseres++;
+		}
+	}
 }
 
 
 int main() 
 {
 	srand(time(NULL));
-	generer_mat_aleatoire(50);
+	generer_mat_aleatoire(95);
 	//for(int i=0; i < 100; i++)	cout << "nb : "<< rand_ligne_col() << endl;
 
 	return 0;
