@@ -8,7 +8,7 @@
 
 int rand_ligne_col();
 
-map generer_mat_aleatoire(int pourcentage_zero);
+void generer_mat_aleatoire(int pourcentage_zero);
 
 
 #endif;
