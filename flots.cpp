@@ -1,7 +1,7 @@
 /**
  * \file          flots.cpp
  * \author    Grégoire Esteban
- * \version   3.0
+ * \version   4.0
  * \date       20 Mai 2015
  * \brief       Effectue les operations d'entrés - sorties sur les fichiers de matrices	    
  *                 
@@ -82,9 +82,9 @@ void Affiche(map <pair<int, int>, int> matrice, int dimL, int dimC)
 {
 	map <pair<int,int>, int>::iterator it;
 	it = matrice.begin();
-	for(int i = 1; i < dimL+1; i++)
+	for(int i = 0; i < dimL; i++)
 	{
-		for (int j = 1; j < dimC+1; j++)
+		for (int j = 0; j < dimC; j++)
 		{
 			if((it->first.first == i) && (it->first.second == j))
 			{
