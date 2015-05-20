@@ -9,9 +9,7 @@
 
 
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <map>
+#include "flots.h"
 
 #define RED "\033[01;31m"
 #define BLUE "\033[01;34m"
@@ -74,6 +72,32 @@ bool Chargement(string matr, map <pair<int, int>, int>& matrice, int& dimL, int&
 	}
 }
 
+bool Sauvegarde(string smatr, map <pair<int, int>, int>& matrice, int& dimL, int& dimC)
+{
+	ofstream save(smatr.c_str(), ios::out | ios::trunc);
+
+	if(save)
+	{
+		save << dimL << endl;
+		save << dimC << endl;
+		save << matrice.size() << endl;
+		map <pair<int,int>, int>::iterator it; 
+
+		for(it = matrice.begin(); it!=matrice.end(); it++)
+		{
+			save<<it->first.first <<" "<< it->first.second <<" "<<it->second<<endl; 
+		}
+		save.close();
+		return 0;
+	}
+	else
+	{
+		cerr <<"Erreur lors de la creation du fichier !" <<endl;
+		return 1;
+
+	}
+}
+
 /**
  * \brief      Affiche une matrice selon la notation standard
  * \details    La fonction utilise un itérateur. Par défaut, une case qui ne contient pas de valeur
@@ -124,6 +148,12 @@ int main()
 	{
 		Affiche(michel,dimL,dimC);
 	}
+
+	string name;
+
+	cout <<"Entrez le nom de la Sauvegarde"<<endl;
+	cin >> name;
+	Sauvegarde((name+".txt").c_str(), michel, dimL, dimC);
 	
 	return 0;                 
 }
