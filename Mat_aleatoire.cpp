@@ -15,7 +15,8 @@ int rand_entre_min_et_max(int min, int max){
 map<pair<int,int>,int> generer_mat_aleatoire(int pourcentage_zero,int& nbLigne,int& nbCol)
 
 {
-	nbLigne = rand_entre_min_et_max(10,20);
+	srand (time(NULL));
+   	nbLigne = rand_entre_min_et_max(10,20);
 	nbCol = rand_entre_min_et_max(10,20);
 	cout << "Nombre de lignes : " << nbLigne << endl;
 	cout << "Nombre de Colonnes : " << nbCol << endl;

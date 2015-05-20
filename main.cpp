@@ -47,6 +47,7 @@ int main()
     int nbC = 0;
     int nbL = 0;
 
+    srand (time(NULL));
     
     map <pair<int, int>, int> Alea = generer_mat_aleatoire(95,nbL,nbC);
     Affiche(Alea,nbL,nbC);
