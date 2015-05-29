@@ -158,14 +158,14 @@ map<pair<int, int>, int> MULTIPLICATION(map<pair<int, int>, int> A, int Lig_A, i
 	if (Col_A != Lig_B) return C;				/** Retour si les dimensions ne sont pas propices à la multiplication */
 	map <pair<int, int>, int>::iterator it1;	/** Création de l'iterateur qui parcourera la matrice A */
 	map <pair<int, int>, int>::iterator it2;	/** Création de l'iterateur qui parcourera la matrice B */
-	for(int i=0; i<Lig_A; i++)					/** Double-boucle pour parcourir toute la matrice cible */
+	for(int i=0; i<Lig_A; ++i)					/** Double-boucle pour parcourir toute la matrice cible */
 	{									
-		for(int j=0; j<Col_B; j++)				/** Double-boucle pour parcourir toute la matrice cible */
+		for(int j=0; j<Col_B; ++j)				/** Double-boucle pour parcourir toute la matrice cible */
 		{
 			int temp = 0;
 			it1 = A.begin();					/** Initialisation des itérateurs */
 			it2 = B.begin();					/** Initialisation des itérateurs */
-			for (int k=0; k<Col_A; k++) 		/** 3ème boucle qui effectue l'opération */
+			for (int k=0; k<Col_A; ++k) 		/** 3ème boucle qui effectue l'opération */
 			{
 				while (it1 != A.end() && ((it1->first.first < i) || (it1->first.second < k))) it1++; /** incrementation des itérateurs */
 				while (it2 != B.end() && ((it2->first.second < j) || (it2->first.first < k))) it2++; /** incrementation des itérateurs */
