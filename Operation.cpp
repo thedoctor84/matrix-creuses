@@ -3,12 +3,13 @@
 #include <iostream>
 using namespace std;
 
-/** Fonction Transposée qui inverse une matrice
- *	
- *	Recrée simplement une nouvelle matrice avec les indices i et j inversés
- * 	
+/**
+ * \brief	Fonction qui transpose une matrice
+ * \details	Parcourt la matrice pour inverser sa pair d'indices
+ * \param	A			Matrice qui va être transposée
+
  */
-map<pair<int, int>, int> TRANSPOSEE(map<pair<int, int>, int> A, int Lig_A, int Col_A)
+map<pair<int, int>, int> TRANSPOSEE(map<pair<int, int>, int> A)
 {
 	map <pair<int, int>, int> T;
 	map <pair<int, int>, int>::iterator it;
@@ -19,11 +20,15 @@ map<pair<int, int>, int> TRANSPOSEE(map<pair<int, int>, int> A, int Lig_A, int C
 	return T; /** Retourne la matrice une fois transposée */
 }
 
-
-/** Fonction Addition qui prend en argument 2 matrices creuses ainsi que leurs dimensions
- *	
- *	Crée et renvoie la matrice C = A + B
- * 	
+/**
+ * \brief	Fonction qui additionne 2 matrices entre-elles
+ * \details	Parcourt les 2 matrices à l'aide de 2 itérateurs, met la somme dans une 3ème matrice qui sera retournée
+ * \param	A			Premiere Matrice
+ * \param	Lig_A   	Nombre de lignes dans la matrice A
+ * \param	Col_A		Nombre de colonnes dans la matrice A
+ * \param	B			Deuxieme Matrice
+ * \param	Lig_B		Nombre de lignes dans la matrice B
+ * \param	Col_B		Nombre de colonnes dans la matrice B
  */
 map<pair<int, int>, int> ADDITION(map<pair<int, int>, int> A, int Lig_A, int Col_A, map<pair<int, int>, int> B, int Lig_B, int Col_B)
 {
@@ -76,6 +81,16 @@ map<pair<int, int>, int> ADDITION(map<pair<int, int>, int> A, int Lig_A, int Col
 	return C;	/** Retourne la nouvelle matrice créée */
 }
 
+/**
+ * \brief	Fonction qui soustrait une matrice à une autre
+ * \details	Parcourt les 2 matrices à l'aide de 2 itérateurs, met la différence dans une 3ème matrice qui sera retournée
+ * \param	A			Premiere Matrice
+ * \param	Lig_A   	Nombre de lignes dans la matrice A
+ * \param	Col_A		Nombre de colonnes dans la matrice A
+ * \param	B			Deuxieme Matrice
+ * \param	Lig_B		Nombre de lignes dans la matrice B
+ * \param	Col_B		Nombre de colonnes dans la matrice B
+ */
 map<pair<int, int>, int> SOUSTRACTION(map<pair<int, int>, int> A, int Lig_A, int Col_A, map<pair<int, int>, int> B, int Lig_B, int Col_B)
 {
 	map <pair<int, int>, int> C;				
@@ -126,12 +141,23 @@ map<pair<int, int>, int> SOUSTRACTION(map<pair<int, int>, int> A, int Lig_A, int
 	return C;	/** Retour de la nouvelle matrice crée */
 }
 
+/**
+ * \brief	Fonction qui multiplie 2 matrices entre-elles
+ * \details	Parcourt les 2 matrices à l'aide de 2 itérateurs, et met le résultat de la multiplication
+ *			dans une 3ème matrice qui sera retournée
+ * \param	A			Premiere Matrice
+ * \param	Lig_A   	Nombre de lignes dans la matrice A
+ * \param	Col_A		Nombre de colonnes dans la matrice A
+ * \param	B			Deuxieme Matrice
+ * \param	Lig_B		Nombre de lignes dans la matrice B
+ * \param	Col_B		Nombre de colonnes dans la matrice B
+ */
 map<pair<int, int>, int> MULTIPLICATION(map<pair<int, int>, int> A, int Lig_A, int Col_A, map<pair<int, int>, int> B, int Lig_B, int Col_B)
 {
-	map <pair<int, int>, int> C;
-	if (Col_A != Lig_B) return C;	/** Retour si les dimensions ne sont pas propices à la multiplication */
-	map <pair<int, int>, int>::iterator it1;
-	map <pair<int, int>, int>::iterator it2;
+	map <pair<int, int>, int> C;				/** Matrice crée et retournée */
+	if (Col_A != Lig_B) return C;				/** Retour si les dimensions ne sont pas propices à la multiplication */
+	map <pair<int, int>, int>::iterator it1;	/** Création de l'iterateur qui parcourera la matrice A */
+	map <pair<int, int>, int>::iterator it2;	/** Création de l'iterateur qui parcourera la matrice B */
 	for(int i=0; i<Lig_A; i++)					/** Double-boucle pour parcourir toute la matrice cible */
 	{									
 		for(int j=0; j<Col_B; j++)				/** Double-boucle pour parcourir toute la matrice cible */
@@ -152,5 +178,5 @@ map<pair<int, int>, int> MULTIPLICATION(map<pair<int, int>, int> A, int Lig_A, i
 			if(temp != 0) C.insert(pair<pair<int, int>, int> (make_pair(i, j), temp)); /** Insertion de la valeur temporaire */
 		}
 	}
-	return C;
+	return C;									
 }
