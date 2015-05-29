@@ -44,11 +44,9 @@ int main()
 
 
     cout << YELLOW << "\n> AFFICHAGE MAP ALEATOIRE : \n\n";
-    int nbC = 0;
-    int nbL = 0;
+    int nbC = 1;
+    int nbL = 1;
 
-    srand (time(NULL));
-    
     map <pair<int, int>, int> Alea = generer_mat_aleatoire(95,nbL,nbC);
     Affiche(Alea,nbL,nbC);
 
