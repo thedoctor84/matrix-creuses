@@ -3,10 +3,10 @@
 #include "Operation.h"
 #include "flots.h"
 #include "Mat_aleatoire.h"
-#define YELLOW "\033[01;33m"
-#define RED "\033[01;31m"
-#define BLUE "\033[01;34m"
-#define GREEN "\033[01;32m"
+#define RED     "\033[01;31m"
+#define GREEN   "\033[01;32m"
+#define YELLOW  "\033[01;33m"
+#define BLUE    "\033[01;34m"
 using namespace std;
 
 /**
@@ -61,7 +61,7 @@ int main()
             {
                 do
                 {
-                    cout<<"Souhaitez vous 1)Charger   2)Generer la matrice "<<i<<" ?"<<endl;
+                    cout<<"Souhaitez vous 1) Charger   2) Generer la matrice "<<i<<" ?"<<endl;
                     cin >> choix;
 
                 }while(choix != 1 || choix != 2)
@@ -117,7 +117,7 @@ int main()
         {
             do
             {
-                cout<<"Souhaitez vous 1)Charger   2)Generer la matrice "<<i<<" ?"<<endl;
+                cout<<"Souhaitez-vous 1) Charger   2) Generer la matrice "<<i<<" ?"<<endl;
                 cin >> choix;
 
             }while(choix != 1 || choix != 2)
@@ -138,7 +138,7 @@ int main()
         
         char choice;
 
-        cout<<"Voulez vous sauvegarder la matrice resultante ?(o/n)"<<endl;
+        cout<<"Voulez-vous sauvegarder la matrice resultante ?(o/n)"<<endl;
         cin>>choice;
         while(choice != 'o' || choice != 'n')
         {
