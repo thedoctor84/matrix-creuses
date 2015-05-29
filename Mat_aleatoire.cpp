@@ -4,13 +4,13 @@
 #include "Mat_aleatoire.h"
 using namespace std;
 
-//matrice aléatoire avec un % de 0 (ex: mat_alea(70) donne 70% de 0 et le reste aléatoire)
 
-
-// Nb de Lignes et de col entre 5 et 10
-int rand_entre_min_et_max(int min, int max){
-    return rand()%(max-min) + min;
+int rand_entre_min_et_max(int min, int max)
+{
+    return rand()%(max-min+1) + min;
 }
+
+//matrice aléatoire avec un % de 0 (ex: mat_alea(70) donne 70% de 0 et le reste aléatoire)
 
 map<pair<int,int>,int> generer_mat_aleatoire(int pourcentage_zero,int& nbLigne,int& nbCol)
 
@@ -27,19 +27,20 @@ map<pair<int,int>,int> generer_mat_aleatoire(int pourcentage_zero,int& nbLigne,i
 	cout << "Nombre de case non nulles : " << nombresNonNuls << endl;
 
 	int nbAlea = rand_entre_min_et_max(1,100);
-	int indLigAlea = rand_entre_min_et_max(0,nbLigne);
-	int indColAlea = rand_entre_min_et_max(0,nbCol);
+	int indLigAlea = rand_entre_min_et_max(0,nbLigne-1);
+	int indColAlea = rand_entre_min_et_max(0,nbCol-1);
 	bool existeDeja;
 
 	MC.insert(pair<pair<int, int>, int> (make_pair(indLigAlea, indColAlea), nbAlea));
+	cout << "Insertion a :" << indLigAlea<< "," << indColAlea << " de : " << nbAlea << endl;
 
 	int nbDeNbNonNulsInseres = 1;
 
 	while(nbDeNbNonNulsInseres < nombresNonNuls)
 	{
 		nbAlea = rand_entre_min_et_max(1,100);
-		indLigAlea = rand_entre_min_et_max(0,nbLigne);
-		indColAlea = rand_entre_min_et_max(0,nbCol);
+		indLigAlea = rand_entre_min_et_max(0,nbLigne-1);
+		indColAlea = rand_entre_min_et_max(0,nbCol-1);
 		existeDeja = false;
 
 		for(it = MC.begin(); it != MC.end(); it++)
@@ -49,8 +50,14 @@ map<pair<int,int>,int> generer_mat_aleatoire(int pourcentage_zero,int& nbLigne,i
 
 		if (!existeDeja)
 		{
+			cout << "PASSAGE DANS INSERT !" << endl;
 			 MC.insert(pair<pair<int, int>, int> (make_pair(indLigAlea, indColAlea), nbAlea));
+			 cout << "Insertion a :" << indLigAlea<< "," << indColAlea << " de : " << nbAlea << endl;
 			 nbDeNbNonNulsInseres++;
+		}
+		else
+		{
+			cout << "error !" << endl;
 		}
 	}
 

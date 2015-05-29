@@ -129,16 +129,9 @@ void Affiche(map <pair<int, int>, int> matrice, int dimL, int dimC)
 		{
 			if((it->first.first == i) && (it->first.second == j))
 			{
-				if(it->second > 0)
-				{
-					cout<< RED << it->second << "\t" << BASIC;
-					it++;
-				}
-				else
-				{
-					cout<< GREEN << it->second << "\t" << BASIC;
-					it++;  
-				}
+				if(it->second > 0)	cout<< GREEN << it->second << "\t" << BASIC;
+				else cout<< RED << it->second << "\t" << BASIC;
+				it++;
 			}
 			else
 			{
