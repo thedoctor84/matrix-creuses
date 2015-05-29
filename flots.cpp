@@ -123,22 +123,15 @@ void Affiche(map <pair<int, int>, int> matrice, int dimL, int dimC)
 {
 	map <pair<int,int>, int>::iterator it;
 	it = matrice.begin();
-	for(int i = 0; i < dimL; i++)
+	for(int i = 0; i <= dimL; i++)
 	{
-		for (int j = 0; j < dimC; j++)
+		for (int j = 0; j <= dimC; j++)
 		{
 			if((it->first.first == i) && (it->first.second == j))
 			{
-				if(it->second > 0)
-				{
-					cout<< RED << it->second << "\t" << BASIC;
-					it++;
-				}
-				else
-				{
-					cout<< GREEN << it->second << "\t" << BASIC;
-					it++;  
-				}
+				if(it->second > 0)	cout<< GREEN << it->second << "\t" << BASIC;
+				else cout<< RED << it->second << "\t" << BASIC;
+				it++;
 			}
 			else
 			{
