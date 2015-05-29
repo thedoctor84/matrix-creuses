@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
     int ope;
-    cout<<"Bienvenu dans le programme d'interaction des MatrLiB"<<endl;
+    cout<<"Bienvenu dans le programme d'interaction des MatrLib"<<endl;
     cout<<endl;
 
         cout<<"Veuillez selectionner une operation parmi :"<<endl;
@@ -120,10 +120,23 @@ int main()
 
         cout<<"Voulez vous sauvegarder la matrice resultante ?(o/n)"<<endl;
         cin>>choice;
-        /////
+        while(choice != 'o' || choice != 'n')
+        {
+            cout << "Veuillez entrer correctement votre choix :" << endl;
+            cin>>choice;
+        }
+        if(choice == 'n')
+        {
 
-        .../
-        Sauvegarde("frite",Alea,nbL,nbC);
+        }
+        else if(choice == 'o')
+        {
+            string nom_sauvegarde;
+            cout << "Quel nom voulez vous pour la sauvegarde ?" << endl;
+            cin >> nom_sauvegarde;
+            Sauvegarde(nom_sauvegarde.c_str(),Alea,nbL,nbC);
+        }
+
         return 0;
 	
 	
