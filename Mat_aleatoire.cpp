@@ -17,6 +17,12 @@
 #include "flots.h"
 using namespace std;
 
+/**
+ * \brief	Fonction qui renvoie un nombre aleatoire entre deux valeurs min et max passees en argument
+ * \details	Donne une matrice de dim aleatoire (entre 10 et 20), avec des valeurs aleatoires non nulles entre 1 et 100
+ * \param	min Valeur minimale du nombre aleatoire voulu
+ * \param   max Valeur aleatoire du nombre aleatoire voulu
+ */
 
 int rand_entre_min_et_max(int min, int max)
 {
