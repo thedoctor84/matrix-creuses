@@ -1,18 +1,22 @@
 #include <iostream>
 #include <map>
+#include <string>
 #include "Operation.h"
+#include "pickfich.h"
 #include "flots.h"
 #include "Mat_aleatoire.h"
+#define BASIC   "\033[01;30m"
 #define RED     "\033[01;31m"
 #define GREEN   "\033[01;32m"
 #define YELLOW  "\033[01;33m"
 #define BLUE    "\033[01;34m"
+
 using namespace std;
 
 /**
- * \file      main.cpp
- * \author    Gregoire
- * \version   4.0
+ * \file       main.cpp
+ * \author     Gregoire
+ * \version    4.0
  * \date       29 mai 2015
  * \brief      Fonction principale que l'utilisateur va utiliser pour faire les opérations.
  *
@@ -29,33 +33,35 @@ using namespace std;
 int main()
 {
     int ope;
+    int choix;
+    map <pair<int, int>, int> A;
+    map <pair<int, int>, int> B;
+
+    map <pair<int, int>, int> Res;
+    string* rech;
+
+    int dimLA;
+    int dimCA;
+    int dimLRes;
+
+    int dimLB;
+    int dimCB;
+    int dimCRes;
+
+    int nbrElemNN1;
+    int nbrElemNN2;
+    int nbrElemNN3;
+
     cout<<"Bienvenue dans le programme d'interaction des MatrLib"<<endl;
     cout<<endl;
 
         cout<<"Veuillez selectionner une operation parmi :"<<endl;
-        cout<<"1) ADDITION   2) MULTIPLICATION   3) SOUSTRACTION   4) TRANSPOSEE"<<endl;
+        cout<< RED <<"1) ADDITION" << GREEN << " 2) MULTIPLICATION" << BLUE << " 3) SOUSTRACTION" << YELLOW << " 4) TRANSPOSEE"<< BASIC << endl;
         cin>>ope;
 
         if(ope == 1 || ope == 2 || ope == 3)
         {
-            int choix;
-            map <pair<int, int>, int> A;
-            map <pair<int, int>, int> B;
 
-            map <pair<int, int>, int> Res;
-            string rech*;
-
-            int dimLA;
-            int dimCA;
-            int dimLRes
-
-            int dimLB;
-            int dimCB;
-            int dimCRes;
-
-            int nbrElemNN1;
-            int nbrElemNN2;
-            int nbrElemNN3;
 
             for(int i = 0; i<2; i++)
             {
@@ -64,28 +70,30 @@ int main()
                     cout<<"Souhaitez vous 1) Charger   2) Generer la matrice "<<i<<" ?"<<endl;
                     cin >> choix;
 
-                }while(choix != 1 || choix != 2)
+                }while(choix != 1 || choix != 2);
 
                 if(choix == 1 && i == 0)
                 {
-                    rech=recherchefich(1);
+                    rech = recherchefich(1);
                     Chargement(rech[0], A, dimLA, dimCA,nbrElemNN1);
                 }
 
                 if(choix == 1 && i == 1)
                 {
-                    rech=recherchefich(1);
+                    rech = recherchefich(1);
                     Chargement(rech[0], B, dimLB, dimCB ,nbrElemNN2);
                 }
 
                 if(choix == 2 && i == 0)
                 {
-                    A = generer_mat_aleatoire(85,dimLA,dimCA);
+                    rech = recherchefich(1);
+                    Chargement(rech[0], A, dimLB, dimCB ,nbrElemNN2);
                 }
 
                 if(choix == 2 && i == 1)
                 {
-                    B = generer_mat_aleatoire(85,dimLB,dimCB);
+                    rech = recherchefich(1);
+                    Chargement(rech[0], B, dimLB, dimCB ,nbrElemNN2);
                 }
             }
 
@@ -129,7 +137,7 @@ int main()
             }
             else
             {
-                A = generer_mat_aleatoire(85,dimLA,dimCA);
+                A = generer_mat_aleatoire(95);
             }
 
             Res = TRANSPOSEE(A, dimLA, dimCA),
@@ -158,6 +166,7 @@ int main()
         }
 
         return 0;
+}
 	
 	
 
