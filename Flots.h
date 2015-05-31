@@ -1,6 +1,6 @@
 /**
  * \file      Flots.h
- * \author    Antoine Letourneur
+ * \author    Grégoire Esteban
  * \version   4.0
  * \date      29 mai 2015
  * \brief     Opération d'entrées/sorties
