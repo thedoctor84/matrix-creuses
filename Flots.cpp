@@ -9,7 +9,7 @@
 
 
 #include <iostream>
-#include "flots.h"
+#include "Flots.h"
 
 #define RED "\033[01;31m"
 #define GREEN "\033[01;32m"
