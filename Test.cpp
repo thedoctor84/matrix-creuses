@@ -54,8 +54,8 @@ int main()
             if(test == true)
             {
                 Res = ADDITION(A, dimLA, dimCA, B, dimLB, dimCB);
-                dimLRes = dimLA + dimLB;
-                dimCRes = dimCA + dimCB;
+                dimLRes = dimLA;
+                dimCRes = dimCA;
                 Affiche(A, dimLA, dimCA);
                 cout << endl;
                 Affiche(B, dimLB, dimCB);
@@ -112,8 +112,8 @@ int main()
             if(test == true)
             {
                 Res = SOUSTRACTION(A, dimLA, dimCA, B, dimLB, dimCB);
-                dimLRes = dimLA + dimLB;
-                dimCRes = dimCA + dimCB;
+                dimLRes = dimLA;
+                dimCRes = dimCA;
                 Affiche(A, dimLA, dimCA);
                 cout << endl;
                 Affiche(B, dimLB, dimCB);
