@@ -1,0 +1,100 @@
+\hypertarget{class_matrice}{\section{Matrice Class Reference}
+\label{class_matrice}\index{Matrice@{Matrice}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_matrice_a2960355d096a3415ca1e49cbf26a211b}{Matrice} (string)
+\begin{DoxyCompactList}\small\item\em Constructeur de \hyperlink{class_matrice}{Matrice}. \end{DoxyCompactList}\item 
+\hypertarget{class_matrice_a5e67677bc4ec3e776030920a140b5e45}{{\bfseries Matrice} (string, int, int)}\label{class_matrice_a5e67677bc4ec3e776030920a140b5e45}
+
+\item 
+\hypertarget{class_matrice_adf18304a72b2e828d99bfe4e1d0ce748}{void {\bfseries Set\-\_\-dim\-L} (int)}\label{class_matrice_adf18304a72b2e828d99bfe4e1d0ce748}
+
+\item 
+\hypertarget{class_matrice_a69305eca1fab66d359d683bd036aa4dc}{void {\bfseries Set\-\_\-dim\-C} (int)}\label{class_matrice_a69305eca1fab66d359d683bd036aa4dc}
+
+\item 
+\hypertarget{class_matrice_a752aaa50023c03f41ac68c795b2ae211}{void {\bfseries Set\-\_\-map} (map$<$ pair$<$ int, int $>$, int $>$)}\label{class_matrice_a752aaa50023c03f41ac68c795b2ae211}
+
+\item 
+\hypertarget{class_matrice_ae312a978bd106c90dfd2216ebfd031df}{int {\bfseries Get\-\_\-dim\-L} ()}\label{class_matrice_ae312a978bd106c90dfd2216ebfd031df}
+
+\item 
+\hypertarget{class_matrice_ab92e39a9889650bc141fa0abe44fce23}{int {\bfseries Get\-\_\-dim\-C} ()}\label{class_matrice_ab92e39a9889650bc141fa0abe44fce23}
+
+\item 
+\hypertarget{class_matrice_ad64fd72e30249645f9edf19eaaeb3eac}{map$<$ pair$<$ int, int $>$, int $>$ {\bfseries Get\-\_\-map} ()}\label{class_matrice_ad64fd72e30249645f9edf19eaaeb3eac}
+
+\item 
+bool \hyperlink{class_matrice_aa2765088d37b21cfe4dd3ae0dd80f542}{Insertion} (int, int, int)
+\begin{DoxyCompactList}\small\item\em Fonction Insertion. \end{DoxyCompactList}\item 
+bool \hyperlink{class_matrice_ae0a5c611e4742547471b20e035660869}{Affichage} ()
+\begin{DoxyCompactList}\small\item\em Fonction Affichage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_matrice_a2960355d096a3415ca1e49cbf26a211b}{\index{Matrice@{Matrice}!Matrice@{Matrice}}
+\index{Matrice@{Matrice}!Matrice@{Matrice}}
+\subsubsection[{Matrice}]{\setlength{\rightskip}{0pt plus 5cm}Matrice\-::\-Matrice (
+\begin{DoxyParamCaption}
+\item[{string}]{nom}
+\end{DoxyParamCaption}
+)}}\label{class_matrice_a2960355d096a3415ca1e49cbf26a211b}
+
+
+Constructeur de \hyperlink{class_matrice}{Matrice}. 
+
+initialise le nom et les dimension de la matrice et test l'existence du fichier. 
+\begin{DoxyParams}{Parameters}
+{\em nom} & nom de la \hyperlink{class_matrice}{Matrice}. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_matrice_ae0a5c611e4742547471b20e035660869}{\index{Matrice@{Matrice}!Affichage@{Affichage}}
+\index{Affichage@{Affichage}!Matrice@{Matrice}}
+\subsubsection[{Affichage}]{\setlength{\rightskip}{0pt plus 5cm}bool Matrice\-::\-Affichage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_matrice_ae0a5c611e4742547471b20e035660869}
+
+
+Fonction Affichage. 
+
+Affiche la matrice. \begin{DoxyReturn}{Returns}
+Retourne un booléen selon si on peut afficher ou pas et affiche si oui. 
+\end{DoxyReturn}
+\hypertarget{class_matrice_aa2765088d37b21cfe4dd3ae0dd80f542}{\index{Matrice@{Matrice}!Insertion@{Insertion}}
+\index{Insertion@{Insertion}!Matrice@{Matrice}}
+\subsubsection[{Insertion}]{\setlength{\rightskip}{0pt plus 5cm}bool Matrice\-::\-Insertion (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{valeur}
+\end{DoxyParamCaption}
+)}}\label{class_matrice_aa2765088d37b21cfe4dd3ae0dd80f542}
+
+
+Fonction Insertion. 
+
+insère une valeur dans une matrice selon ses coordonnées. 
+\begin{DoxyParams}{Parameters}
+{\em x} & indice en ligne. \\
+\hline
+{\em y} & indice en colonne. \\
+\hline
+{\em valeur} & valeur à ajouter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne un booléen selon si on peut insérer ou pas et insère si oui. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_matrice_8h}{Matrice.\-h}\item 
+\hyperlink{_matrice_8cpp}{Matrice.\-cpp}\end{DoxyCompactItemize}

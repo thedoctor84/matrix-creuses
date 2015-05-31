@@ -1,0 +1,251 @@
+\hypertarget{_operation_8h}{\section{Operation.\-h File Reference}
+\label{_operation_8h}\index{Operation.\-h@{Operation.\-h}}
+}
+
+
+Fichier qui regroupe les différentes opérations applicables aux matrices.  
+
+
+{\ttfamily \#include $<$map$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ pair$<$ int, int $>$, int $>$ \hyperlink{_operation_8h_a9fbe834ff08b473c511b33c3617f68b1}{T\-R\-A\-N\-S\-P\-O\-S\-E\-E} (map$<$ pair$<$ int, int $>$, int $>$)
+\begin{DoxyCompactList}\small\item\em Fonction qui transpose une matrice. \end{DoxyCompactList}\item 
+map$<$ pair$<$ int, int $>$, int $>$ \hyperlink{_operation_8h_af849c04f32db7f4701431f7a94494580}{A\-D\-D\-I\-T\-I\-O\-N} (map$<$ pair$<$ int, int $>$, int $>$, int, int, map$<$ pair$<$ int, int $>$, int $>$, int, int)
+\begin{DoxyCompactList}\small\item\em Fonction qui additionne 2 matrices entre-\/elles. \end{DoxyCompactList}\item 
+map$<$ pair$<$ int, int $>$, int $>$ \hyperlink{_operation_8h_ad9a9e9b23463a85b0ac31d19a1dd176c}{S\-O\-U\-S\-T\-R\-A\-C\-T\-I\-O\-N} (map$<$ pair$<$ int, int $>$, int $>$, int, int, map$<$ pair$<$ int, int $>$, int $>$, int, int)
+\begin{DoxyCompactList}\small\item\em Fonction qui soustrait une matrice à une autre. \end{DoxyCompactList}\item 
+map$<$ pair$<$ int, int $>$, int $>$ \hyperlink{_operation_8h_a322789078c4092b41d1a025bcb11f714}{M\-U\-L\-T\-I\-P\-L\-I\-C\-A\-T\-I\-O\-N} (map$<$ pair$<$ int, int $>$, int $>$, int, int, map$<$ pair$<$ int, int $>$, int $>$, int, int)
+\begin{DoxyCompactList}\small\item\em Fonction qui multiplie 2 matrices entre-\/elles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Fichier qui regroupe les différentes opérations applicables aux matrices. \begin{DoxyAuthor}{Author}
+Rémi Drissi 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+4.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+29 mai 2015
+\end{DoxyDate}
+Contient les fonctions décrites dans \hyperlink{_operation_8cpp}{Operation.\-cpp}. 
+
+\subsection{Function Documentation}
+\hypertarget{_operation_8h_af849c04f32db7f4701431f7a94494580}{\index{Operation.\-h@{Operation.\-h}!A\-D\-D\-I\-T\-I\-O\-N@{A\-D\-D\-I\-T\-I\-O\-N}}
+\index{A\-D\-D\-I\-T\-I\-O\-N@{A\-D\-D\-I\-T\-I\-O\-N}!Operation.h@{Operation.\-h}}
+\subsubsection[{A\-D\-D\-I\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}map$<$pair$<$int, int$>$, int$>$ A\-D\-D\-I\-T\-I\-O\-N (
+\begin{DoxyParamCaption}
+\item[{map$<$ pair$<$ int, int $>$, int $>$}]{A, }
+\item[{int}]{Lig\-\_\-\-A, }
+\item[{int}]{Col\-\_\-\-A, }
+\item[{map$<$ pair$<$ int, int $>$, int $>$}]{B, }
+\item[{int}]{Lig\-\_\-\-B, }
+\item[{int}]{Col\-\_\-\-B}
+\end{DoxyParamCaption}
+)}}\label{_operation_8h_af849c04f32db7f4701431f7a94494580}
+
+
+Fonction qui additionne 2 matrices entre-\/elles. 
+
+Parcourt les 2 matrices à l'aide de 2 itérateurs, met la somme dans une 3ème matrice qui sera retournée 
+\begin{DoxyParams}{Parameters}
+{\em A} & Premiere \hyperlink{class_matrice}{Matrice} \\
+\hline
+{\em Lig\-\_\-\-A} & Nombre de lignes dans la matrice A \\
+\hline
+{\em Col\-\_\-\-A} & Nombre de colonnes dans la matrice A \\
+\hline
+{\em B} & Deuxieme \hyperlink{class_matrice}{Matrice} \\
+\hline
+{\em Lig\-\_\-\-B} & Nombre de lignes dans la matrice B \\
+\hline
+{\em Col\-\_\-\-B} & Nombre de colonnes dans la matrice B \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne la 3ème matrice créée précédemment 
+\end{DoxyReturn}
+Si les dimensions des 2 matrices ne sont pas propices a l'addition \-: retour
+
+Initialisation des itérateurs
+
+Initialisation des itérateurs
+
+Répétition de l'opération tant que les 2 itérateurs n'ont pas atteint la fin de leur matrice
+
+Dans le cas où i de A == i de B
+
+Dans le cas où j de A == j de B
+
+Incrémentation des itérateurs
+
+Incrémentation des itérateurs
+
+j de A != j de B
+
+j de A $<$ j de B
+
+Incrémentation des itérateurs
+
+j de A $>$ j de B
+
+Incrémentation des itérateurs
+
+i de A != i de B
+
+i de A $<$ i de B
+
+Incrémentation des itérateurs
+
+i de A $>$ i de B
+
+Incrémentation des itérateurs
+
+Retourne la nouvelle matrice créée \hypertarget{_operation_8h_a322789078c4092b41d1a025bcb11f714}{\index{Operation.\-h@{Operation.\-h}!M\-U\-L\-T\-I\-P\-L\-I\-C\-A\-T\-I\-O\-N@{M\-U\-L\-T\-I\-P\-L\-I\-C\-A\-T\-I\-O\-N}}
+\index{M\-U\-L\-T\-I\-P\-L\-I\-C\-A\-T\-I\-O\-N@{M\-U\-L\-T\-I\-P\-L\-I\-C\-A\-T\-I\-O\-N}!Operation.h@{Operation.\-h}}
+\subsubsection[{M\-U\-L\-T\-I\-P\-L\-I\-C\-A\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}map$<$pair$<$int, int$>$, int$>$ M\-U\-L\-T\-I\-P\-L\-I\-C\-A\-T\-I\-O\-N (
+\begin{DoxyParamCaption}
+\item[{map$<$ pair$<$ int, int $>$, int $>$}]{A, }
+\item[{int}]{Lig\-\_\-\-A, }
+\item[{int}]{Col\-\_\-\-A, }
+\item[{map$<$ pair$<$ int, int $>$, int $>$}]{B, }
+\item[{int}]{Lig\-\_\-\-B, }
+\item[{int}]{Col\-\_\-\-B}
+\end{DoxyParamCaption}
+)}}\label{_operation_8h_a322789078c4092b41d1a025bcb11f714}
+
+
+Fonction qui multiplie 2 matrices entre-\/elles. 
+
+Parcourt les 2 matrices à l'aide de 2 itérateurs, et met le résultat de la multiplication dans une 3ème matrice 
+\begin{DoxyParams}{Parameters}
+{\em A} & Premiere \hyperlink{class_matrice}{Matrice} \\
+\hline
+{\em Lig\-\_\-\-A} & Nombre de lignes dans la matrice A \\
+\hline
+{\em Col\-\_\-\-A} & Nombre de colonnes dans la matrice A \\
+\hline
+{\em B} & Deuxieme \hyperlink{class_matrice}{Matrice} \\
+\hline
+{\em Lig\-\_\-\-B} & Nombre de lignes dans la matrice B \\
+\hline
+{\em Col\-\_\-\-B} & Nombre de colonnes dans la matrice B \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne la 3ème matrice créée précédemment 
+\end{DoxyReturn}
+Retour si les dimensions ne sont pas propices à la multiplication
+
+\hyperlink{class_matrice}{Matrice} crée et retournée
+
+Création de l'iterateur qui parcourera la matrice A
+
+Création de l'iterateur qui parcourera la matrice B
+
+Double-\/boucle pour parcourir toute la matrice cible
+
+Double-\/boucle pour parcourir toute la matrice cible
+
+Initialisation des itérateurs
+
+Initialisation des itérateurs
+
+3ème boucle qui effectue l'opération
+
+incrementation des itérateurs
+
+incrementation des itérateurs
+
+On ajoute notre multiplication à une valeur temporaire
+
+Insertion de la valeur temporaire \hypertarget{_operation_8h_ad9a9e9b23463a85b0ac31d19a1dd176c}{\index{Operation.\-h@{Operation.\-h}!S\-O\-U\-S\-T\-R\-A\-C\-T\-I\-O\-N@{S\-O\-U\-S\-T\-R\-A\-C\-T\-I\-O\-N}}
+\index{S\-O\-U\-S\-T\-R\-A\-C\-T\-I\-O\-N@{S\-O\-U\-S\-T\-R\-A\-C\-T\-I\-O\-N}!Operation.h@{Operation.\-h}}
+\subsubsection[{S\-O\-U\-S\-T\-R\-A\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}map$<$pair$<$int, int$>$, int$>$ S\-O\-U\-S\-T\-R\-A\-C\-T\-I\-O\-N (
+\begin{DoxyParamCaption}
+\item[{map$<$ pair$<$ int, int $>$, int $>$}]{A, }
+\item[{int}]{Lig\-\_\-\-A, }
+\item[{int}]{Col\-\_\-\-A, }
+\item[{map$<$ pair$<$ int, int $>$, int $>$}]{B, }
+\item[{int}]{Lig\-\_\-\-B, }
+\item[{int}]{Col\-\_\-\-B}
+\end{DoxyParamCaption}
+)}}\label{_operation_8h_ad9a9e9b23463a85b0ac31d19a1dd176c}
+
+
+Fonction qui soustrait une matrice à une autre. 
+
+Parcourt les 2 matrices à l'aide de 2 itérateurs, met la différence dans une 3ème matrice qui sera retournée 
+\begin{DoxyParams}{Parameters}
+{\em A} & Premiere \hyperlink{class_matrice}{Matrice} \\
+\hline
+{\em Lig\-\_\-\-A} & Nombre de lignes dans la matrice A \\
+\hline
+{\em Col\-\_\-\-A} & Nombre de colonnes dans la matrice A \\
+\hline
+{\em B} & Deuxieme \hyperlink{class_matrice}{Matrice} \\
+\hline
+{\em Lig\-\_\-\-B} & Nombre de lignes dans la matrice B \\
+\hline
+{\em Col\-\_\-\-B} & Nombre de colonnes dans la matrice B \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne la 3ème matrice créée précédemment 
+\end{DoxyReturn}
+Retour si les dimensions ne sont pas propices à la soustraction
+
+Initialisation des itérateurs
+
+Initialisation des itérateurs
+
+i de A == i de B
+
+j de A == j de B
+
+Incrémentation des itérateurs
+
+Incrémentation des itérateurs
+
+j de A != j de B
+
+j de A $<$ j de B
+
+Incrémentation des itérateurs
+
+j de A $>$ j de B
+
+Incrémentation des itérateurs
+
+i de A != i de B
+
+i de A $<$ i de B
+
+Incrémentation des itérateurs
+
+i de A $>$ i de B
+
+Incrémentation des itérateurs
+
+Retour de la nouvelle matrice crée \hypertarget{_operation_8h_a9fbe834ff08b473c511b33c3617f68b1}{\index{Operation.\-h@{Operation.\-h}!T\-R\-A\-N\-S\-P\-O\-S\-E\-E@{T\-R\-A\-N\-S\-P\-O\-S\-E\-E}}
+\index{T\-R\-A\-N\-S\-P\-O\-S\-E\-E@{T\-R\-A\-N\-S\-P\-O\-S\-E\-E}!Operation.h@{Operation.\-h}}
+\subsubsection[{T\-R\-A\-N\-S\-P\-O\-S\-E\-E}]{\setlength{\rightskip}{0pt plus 5cm}map$<$pair$<$int, int$>$, int$>$ T\-R\-A\-N\-S\-P\-O\-S\-E\-E (
+\begin{DoxyParamCaption}
+\item[{map$<$ pair$<$ int, int $>$, int $>$}]{A}
+\end{DoxyParamCaption}
+)}}\label{_operation_8h_a9fbe834ff08b473c511b33c3617f68b1}
+
+
+Fonction qui transpose une matrice. 
+
+Parcourt la matrice pour inverser sa pair d'indices 
+\begin{DoxyParams}{Parameters}
+{\em A} & \hyperlink{class_matrice}{Matrice} qui va être transposée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne la matrice créée précédemment. 
+\end{DoxyReturn}
+Retourne la matrice une fois transposée 

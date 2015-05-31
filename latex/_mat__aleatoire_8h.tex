@@ -1,0 +1,93 @@
+\hypertarget{_mat__aleatoire_8h}{\section{Mat\-\_\-aleatoire.\-h File Reference}
+\label{_mat__aleatoire_8h}\index{Mat\-\_\-aleatoire.\-h@{Mat\-\_\-aleatoire.\-h}}
+}
+
+
+Enregistre une matrice aleatoire dans un fichier.  
+
+
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_mat__aleatoire_8h_ab582bbeed9c0b3290a730d7638e51abc}{rand\-\_\-entre\-\_\-min\-\_\-et\-\_\-max} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Fonction qui renvoie un nombre aleatoire entre deux valeurs min et max passees en argument. \end{DoxyCompactList}\item 
+void \hyperlink{_mat__aleatoire_8h_a12456d05c9dfe88a7d98d31aa05425f8}{generer\-\_\-mat\-\_\-aleatoire} (int pourcentage\-\_\-zero)
+\begin{DoxyCompactList}\small\item\em Fonction qui genere une matrice remplit aleatoirement avec une dimension aleatoire. \end{DoxyCompactList}\item 
+void \hyperlink{_mat__aleatoire_8h_a04e2f1dd22c820249343eb8d40c9a0da}{generer\-\_\-mat\-\_\-aleatoire\-\_\-taille\-\_\-fixe} (int nb\-Ligne, int nb\-Col, int pourcentage\-\_\-zero)
+\begin{DoxyCompactList}\small\item\em Fonction qui genere une matrice remplit aleatoirement avec une dimension donnee. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Enregistre une matrice aleatoire dans un fichier. \begin{DoxyAuthor}{Author}
+Antoine Letourneur 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+4.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+29 mai 2015
+\end{DoxyDate}
+Sauvegarde une matrice de dim aleatoire avec une pourcentage de zeros donné Contient une fonction renvoyant une nombre aleatoire entre deux valeurs min et max donnees Et contient la fonction generant une matrice aleatoire avec un pourcentage donne de zeros 
+
+\subsection{Function Documentation}
+\hypertarget{_mat__aleatoire_8h_a12456d05c9dfe88a7d98d31aa05425f8}{\index{Mat\-\_\-aleatoire.\-h@{Mat\-\_\-aleatoire.\-h}!generer\-\_\-mat\-\_\-aleatoire@{generer\-\_\-mat\-\_\-aleatoire}}
+\index{generer\-\_\-mat\-\_\-aleatoire@{generer\-\_\-mat\-\_\-aleatoire}!Mat_aleatoire.h@{Mat\-\_\-aleatoire.\-h}}
+\subsubsection[{generer\-\_\-mat\-\_\-aleatoire}]{\setlength{\rightskip}{0pt plus 5cm}void generer\-\_\-mat\-\_\-aleatoire (
+\begin{DoxyParamCaption}
+\item[{int}]{pourcentage\-\_\-zero}
+\end{DoxyParamCaption}
+)}}\label{_mat__aleatoire_8h_a12456d05c9dfe88a7d98d31aa05425f8}
+
+
+Fonction qui genere une matrice remplit aleatoirement avec une dimension aleatoire. 
+
+Donne une matrice de dim aleatoire (entre 10 et 20), avec des valeurs aleatoires non nulles entre 1 et 100 
+\begin{DoxyParams}{Parameters}
+{\em pourcentage\-\_\-zero} & Le pourcentage de 0 dans la matrice creuse (entier de 0 a 100) \\
+\hline
+\end{DoxyParams}
+\hypertarget{_mat__aleatoire_8h_a04e2f1dd22c820249343eb8d40c9a0da}{\index{Mat\-\_\-aleatoire.\-h@{Mat\-\_\-aleatoire.\-h}!generer\-\_\-mat\-\_\-aleatoire\-\_\-taille\-\_\-fixe@{generer\-\_\-mat\-\_\-aleatoire\-\_\-taille\-\_\-fixe}}
+\index{generer\-\_\-mat\-\_\-aleatoire\-\_\-taille\-\_\-fixe@{generer\-\_\-mat\-\_\-aleatoire\-\_\-taille\-\_\-fixe}!Mat_aleatoire.h@{Mat\-\_\-aleatoire.\-h}}
+\subsubsection[{generer\-\_\-mat\-\_\-aleatoire\-\_\-taille\-\_\-fixe}]{\setlength{\rightskip}{0pt plus 5cm}void generer\-\_\-mat\-\_\-aleatoire\-\_\-taille\-\_\-fixe (
+\begin{DoxyParamCaption}
+\item[{int}]{nb\-Ligne, }
+\item[{int}]{nb\-Col, }
+\item[{int}]{pourcentage\-\_\-zero}
+\end{DoxyParamCaption}
+)}}\label{_mat__aleatoire_8h_a04e2f1dd22c820249343eb8d40c9a0da}
+
+
+Fonction qui genere une matrice remplit aleatoirement avec une dimension donnee. 
+
+Donne une matrice de taille fixee, avec des valeurs aleatoires non nulles entre 1 et 100 
+\begin{DoxyParams}{Parameters}
+{\em nb\-Ligne} & Le nombre de lignes de la matrice \\
+\hline
+{\em nb\-Col} & Le nombre de colonnes de la matrice \\
+\hline
+{\em pourcentage\-\_\-zero} & Le pourcentage de 0 dans la matrice creuse (entier de 0 a 100) \\
+\hline
+\end{DoxyParams}
+\hypertarget{_mat__aleatoire_8h_ab582bbeed9c0b3290a730d7638e51abc}{\index{Mat\-\_\-aleatoire.\-h@{Mat\-\_\-aleatoire.\-h}!rand\-\_\-entre\-\_\-min\-\_\-et\-\_\-max@{rand\-\_\-entre\-\_\-min\-\_\-et\-\_\-max}}
+\index{rand\-\_\-entre\-\_\-min\-\_\-et\-\_\-max@{rand\-\_\-entre\-\_\-min\-\_\-et\-\_\-max}!Mat_aleatoire.h@{Mat\-\_\-aleatoire.\-h}}
+\subsubsection[{rand\-\_\-entre\-\_\-min\-\_\-et\-\_\-max}]{\setlength{\rightskip}{0pt plus 5cm}int rand\-\_\-entre\-\_\-min\-\_\-et\-\_\-max (
+\begin{DoxyParamCaption}
+\item[{int}]{min, }
+\item[{int}]{max}
+\end{DoxyParamCaption}
+)}}\label{_mat__aleatoire_8h_ab582bbeed9c0b3290a730d7638e51abc}
+
+
+Fonction qui renvoie un nombre aleatoire entre deux valeurs min et max passees en argument. 
+
+Donne une matrice de dim aleatoire (entre 10 et 20), avec des valeurs aleatoires non nulles entre 1 et 100 
+\begin{DoxyParams}{Parameters}
+{\em min} & Valeur minimale du nombre aleatoire voulu \\
+\hline
+{\em max} & Valeur aleatoire du nombre aleatoire voulu \\
+\hline
+\end{DoxyParams}

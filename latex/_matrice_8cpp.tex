@@ -1,0 +1,138 @@
+\hypertarget{_matrice_8cpp}{\section{Matrice.\-cpp File Reference}
+\label{_matrice_8cpp}\index{Matrice.\-cpp@{Matrice.\-cpp}}
+}
+
+
+Effectue les opérations sur les matrice à partir d'une classe.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include \char`\"{}Matrice.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Operation.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Flots.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Pickfich.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Mat\-\_\-aleatoire.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_matrice}{Matrice} \hyperlink{_matrice_8cpp_a0a7f8aefbf05562578fd477a36e5db55}{Addition} (string nom, \hyperlink{class_matrice}{Matrice} A, \hyperlink{class_matrice}{Matrice} B)
+\begin{DoxyCompactList}\small\item\em Fonction Addition. \end{DoxyCompactList}\item 
+\hyperlink{class_matrice}{Matrice} \hyperlink{_matrice_8cpp_aff8045131c8d3643fcab531b6ffcd8e9}{Soustraction} (string nom, \hyperlink{class_matrice}{Matrice} A, \hyperlink{class_matrice}{Matrice} B)
+\begin{DoxyCompactList}\small\item\em Fonction Soustraction. \end{DoxyCompactList}\item 
+\hyperlink{class_matrice}{Matrice} \hyperlink{_matrice_8cpp_ae40d46595d3c1882b90f7496385abb7a}{Multiplication} (string nom, \hyperlink{class_matrice}{Matrice} A, \hyperlink{class_matrice}{Matrice} B)
+\begin{DoxyCompactList}\small\item\em Fonction Multiplication. \end{DoxyCompactList}\item 
+\hyperlink{class_matrice}{Matrice} \hyperlink{_matrice_8cpp_ac910343379c2f89f4a373e42f59e8c85}{Transposee} (string nom, \hyperlink{class_matrice}{Matrice} A)
+\begin{DoxyCompactList}\small\item\em Fonction Transposee. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Effectue les opérations sur les matrice à partir d'une classe. \begin{DoxyAuthor}{Author}
+Rémi Drissi 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+4.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+29 mai 2015
+\end{DoxyDate}
+Les fonctions sur les matrices ont étés crée de façon à utiliser l'objet \hyperlink{class_matrice}{Matrice} pour que l'utilisateur est une gestion facile des matrices. 
+
+\subsection{Function Documentation}
+\hypertarget{_matrice_8cpp_a0a7f8aefbf05562578fd477a36e5db55}{\index{Matrice.\-cpp@{Matrice.\-cpp}!Addition@{Addition}}
+\index{Addition@{Addition}!Matrice.cpp@{Matrice.\-cpp}}
+\subsubsection[{Addition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrice} Addition (
+\begin{DoxyParamCaption}
+\item[{string}]{nom, }
+\item[{{\bf Matrice}}]{A, }
+\item[{{\bf Matrice}}]{B}
+\end{DoxyParamCaption}
+)}}\label{_matrice_8cpp_a0a7f8aefbf05562578fd477a36e5db55}
+
+
+Fonction Addition. 
+
+Additionne deux matrices après avoir tester les conditions nécéssaire. 
+\begin{DoxyParams}{Parameters}
+{\em nom} & nom de la matrice. \\
+\hline
+{\em A} & \hyperlink{class_matrice}{Matrice} A. \\
+\hline
+{\em B} & \hyperlink{class_matrice}{Matrice} B. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne une \hyperlink{class_matrice}{Matrice}, addition de A et de B. 
+\end{DoxyReturn}
+\hypertarget{_matrice_8cpp_ae40d46595d3c1882b90f7496385abb7a}{\index{Matrice.\-cpp@{Matrice.\-cpp}!Multiplication@{Multiplication}}
+\index{Multiplication@{Multiplication}!Matrice.cpp@{Matrice.\-cpp}}
+\subsubsection[{Multiplication}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrice} Multiplication (
+\begin{DoxyParamCaption}
+\item[{string}]{nom, }
+\item[{{\bf Matrice}}]{A, }
+\item[{{\bf Matrice}}]{B}
+\end{DoxyParamCaption}
+)}}\label{_matrice_8cpp_ae40d46595d3c1882b90f7496385abb7a}
+
+
+Fonction Multiplication. 
+
+Multiplie deux matrices après avoir tester les conditions nécéssaire. 
+\begin{DoxyParams}{Parameters}
+{\em nom} & nom de la matrice. \\
+\hline
+{\em A} & \hyperlink{class_matrice}{Matrice} A. \\
+\hline
+{\em B} & \hyperlink{class_matrice}{Matrice} B. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne une \hyperlink{class_matrice}{Matrice}, multiplication de A et de B. 
+\end{DoxyReturn}
+\hypertarget{_matrice_8cpp_aff8045131c8d3643fcab531b6ffcd8e9}{\index{Matrice.\-cpp@{Matrice.\-cpp}!Soustraction@{Soustraction}}
+\index{Soustraction@{Soustraction}!Matrice.cpp@{Matrice.\-cpp}}
+\subsubsection[{Soustraction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrice} Soustraction (
+\begin{DoxyParamCaption}
+\item[{string}]{nom, }
+\item[{{\bf Matrice}}]{A, }
+\item[{{\bf Matrice}}]{B}
+\end{DoxyParamCaption}
+)}}\label{_matrice_8cpp_aff8045131c8d3643fcab531b6ffcd8e9}
+
+
+Fonction Soustraction. 
+
+Soustrait deux matrices après avoir tester les conditions nécéssaire. 
+\begin{DoxyParams}{Parameters}
+{\em nom} & nom de la matrice. \\
+\hline
+{\em A} & \hyperlink{class_matrice}{Matrice} A. \\
+\hline
+{\em B} & \hyperlink{class_matrice}{Matrice} B. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne une \hyperlink{class_matrice}{Matrice}, soustraction de A et de B. 
+\end{DoxyReturn}
+\hypertarget{_matrice_8cpp_ac910343379c2f89f4a373e42f59e8c85}{\index{Matrice.\-cpp@{Matrice.\-cpp}!Transposee@{Transposee}}
+\index{Transposee@{Transposee}!Matrice.cpp@{Matrice.\-cpp}}
+\subsubsection[{Transposee}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Matrice} Transposee (
+\begin{DoxyParamCaption}
+\item[{string}]{nom, }
+\item[{{\bf Matrice}}]{A}
+\end{DoxyParamCaption}
+)}}\label{_matrice_8cpp_ac910343379c2f89f4a373e42f59e8c85}
+
+
+Fonction Transposee. 
+
+Effectue la transposee d'une matrice A 
+\begin{DoxyParams}{Parameters}
+{\em nom} & nom de la matrice. \\
+\hline
+{\em A} & \hyperlink{class_matrice}{Matrice} A. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retourne une \hyperlink{class_matrice}{Matrice}, transposee de A. 
+\end{DoxyReturn}

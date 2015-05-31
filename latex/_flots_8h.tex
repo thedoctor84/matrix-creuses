@@ -1,0 +1,112 @@
+\hypertarget{_flots_8h}{\section{Flots.\-h File Reference}
+\label{_flots_8h}\index{Flots.\-h@{Flots.\-h}}
+}
+
+
+Opération d'entrées/sorties.  
+
+
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{_flots_8h_a37a3b856ec041188628ab0e34013cbf0}{Chargement} (string matr, map$<$ pair$<$ int, int $>$, int $>$ \&matrice, int \&dim\-L, int \&dim\-C, int \&nbr\-Elem\-N\-N)
+\begin{DoxyCompactList}\small\item\em Charge une matrice à partir d'un fichier texte. \end{DoxyCompactList}\item 
+void \hyperlink{_flots_8h_affe3be52b5c4892bb00b3d8660bc80bb}{Affiche} (map$<$ pair$<$ int, int $>$, int $>$ matrice, int dim\-L, int dim\-C)
+\begin{DoxyCompactList}\small\item\em Affiche une matrice selon la notation standard. \end{DoxyCompactList}\item 
+bool \hyperlink{_flots_8h_ae40ec8b906f624785c3c3e68c5f4dfe2}{Sauvegarde} (string smatr, map$<$ pair$<$ int, int $>$, int $>$ matrice, int dim\-L, int dim\-C)
+\begin{DoxyCompactList}\small\item\em Sauvegarde une matrice dans un fichier texte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Opération d'entrées/sorties. \begin{DoxyAuthor}{Author}
+Grégoire Esteban 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+4.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+29 mai 2015
+\end{DoxyDate}
+Affichage, Chargement et sauvegarde d'une matrice sont disponibles 
+
+\subsection{Function Documentation}
+\hypertarget{_flots_8h_affe3be52b5c4892bb00b3d8660bc80bb}{\index{Flots.\-h@{Flots.\-h}!Affiche@{Affiche}}
+\index{Affiche@{Affiche}!Flots.h@{Flots.\-h}}
+\subsubsection[{Affiche}]{\setlength{\rightskip}{0pt plus 5cm}void Affiche (
+\begin{DoxyParamCaption}
+\item[{map$<$ pair$<$ int, int $>$, int $>$}]{matrice, }
+\item[{int}]{dim\-L, }
+\item[{int}]{dim\-C}
+\end{DoxyParamCaption}
+)}}\label{_flots_8h_affe3be52b5c4892bb00b3d8660bc80bb}
+
+
+Affiche une matrice selon la notation standard. 
+
+La fonction utilise un itérateur. Par défaut, une case qui ne contient pas de valeur vaut 0 
+\begin{DoxyParams}{Parameters}
+{\em matrice} & Référence de la matrice a afficher \\
+\hline
+{\em dim\-L} & Entier représentant le nombre de lignes totale de la matrice \\
+\hline
+{\em dim\-C} & Entier représentant le nombre de colonnes totale de la matrice \\
+\hline
+\end{DoxyParams}
+\hypertarget{_flots_8h_a37a3b856ec041188628ab0e34013cbf0}{\index{Flots.\-h@{Flots.\-h}!Chargement@{Chargement}}
+\index{Chargement@{Chargement}!Flots.h@{Flots.\-h}}
+\subsubsection[{Chargement}]{\setlength{\rightskip}{0pt plus 5cm}bool Chargement (
+\begin{DoxyParamCaption}
+\item[{string}]{matr, }
+\item[{map$<$ pair$<$ int, int $>$, int $>$ \&}]{matrice, }
+\item[{int \&}]{dim\-L, }
+\item[{int \&}]{dim\-C, }
+\item[{int \&}]{nbr\-Elem\-N\-N}
+\end{DoxyParamCaption}
+)}}\label{_flots_8h_a37a3b856ec041188628ab0e34013cbf0}
+
+
+Charge une matrice à partir d'un fichier texte. 
+
+Le schéma d'importation se fait d'abord en chargeant les paramètres de la matrice puis chaque valeur est récupéré via ses indices de lignes puis de colonne, et enfin la valeur est insérée dans la matrice. 
+\begin{DoxyParams}{Parameters}
+{\em matrice} & Référence de la matrice qui va acceuillir les données du fichier \\
+\hline
+{\em dim\-L} & Entier représentant le nombre de lignes totale de la matrice \\
+\hline
+{\em dim\-C} & Entier représentant le nombre de colonnes totale de la matrice \\
+\hline
+{\em nbr\-Elem\-N\-N} & Entier représentant le nombre de valeurs différentes de 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un {\itshape booléen} selon l'erreur d'ouverture de fichier 
+\end{DoxyReturn}
+\hypertarget{_flots_8h_ae40ec8b906f624785c3c3e68c5f4dfe2}{\index{Flots.\-h@{Flots.\-h}!Sauvegarde@{Sauvegarde}}
+\index{Sauvegarde@{Sauvegarde}!Flots.h@{Flots.\-h}}
+\subsubsection[{Sauvegarde}]{\setlength{\rightskip}{0pt plus 5cm}bool Sauvegarde (
+\begin{DoxyParamCaption}
+\item[{string}]{smatr, }
+\item[{map$<$ pair$<$ int, int $>$, int $>$}]{matrice, }
+\item[{int}]{dim\-L, }
+\item[{int}]{dim\-C}
+\end{DoxyParamCaption}
+)}}\label{_flots_8h_ae40ec8b906f624785c3c3e68c5f4dfe2}
+
+
+Sauvegarde une matrice dans un fichier texte. 
+
+Le schéma d'exportation se fait d'abord en inscrivant les paramètres de la matrice puis chaque valeur est écrite sur une ligne selon le format L C V (Ligne Colonne Valeur) 
+\begin{DoxyParams}{Parameters}
+{\em matrice} & Référence de la matrice qui contient les données \\
+\hline
+{\em dim\-L} & Entier représentant le nombre de lignes totale de la matrice \\
+\hline
+{\em dim\-C} & Entier représentant le nombre de colonnes totale de la matrice \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+un {\itshape booléen} selon l'erreur d'ouverture de fichier 
+\end{DoxyReturn}
