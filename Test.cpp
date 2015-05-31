@@ -88,18 +88,16 @@ int main()
                 {
                     dimLRes = dimLA;
                     dimCRes = dimCB;
+                    Affiche(A, dimLA, dimCA);
+                    cout << endl;
+                    Affiche(B, dimLB, dimCB);
+                    cout << endl;
+                    Affiche(Res, dimLRes, dimCRes);
                 }
                 else
                 {
-                    dimLRes = 0;
-                    dimCRes = 0;
+                    cerr << "Multiplication impossible !" <<endl;
                 }
-                
-                Affiche(A, dimLA, dimCA);
-                cout << endl;
-                Affiche(B, dimLB, dimCB);
-                cout << endl;
-                Affiche(Res, dimLRes, dimCRes);
             }
             else
             {
