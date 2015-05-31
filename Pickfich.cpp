@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "pickfich.h"
+#include "Pickfich.h"
 
 using namespace std;
 
