@@ -52,7 +52,7 @@ void Matrice::Set_dimL(int dim) {dimL = dim;}
 
 void Matrice::Set_dimC(int dim) {dimC = dim;}
 
-void Matrice::Set_map(map<pair<int, int>, int>& X) {M = X;}
+void Matrice::Set_map(map<pair<int, int>, int> X) {M = X;}
 
 int  Matrice::Get_dimL() {return dimL;}
 
@@ -60,7 +60,7 @@ int  Matrice::Get_dimC() {return dimC;}
 
 map<pair<int, int>, int> Matrice::Get_map() {return M;}
 
-Matrice& Addition(string nom, Matrice& A, Matrice& B)
+Matrice Addition(string nom, Matrice A, Matrice B)
 {
 	Matrice X(nom);
 	if(A.Get_dimL() != B.Get_dimL() || A.Get_dimC() != B.Get_dimC()) return NULL;
@@ -72,7 +72,7 @@ Matrice& Addition(string nom, Matrice& A, Matrice& B)
 	return X;
 }
 
-Matrice& Soustraction(string nom, Matrice& A, Matrice& B)
+Matrice Soustraction(string nom, Matrice A, Matrice B)
 {
 	Matrice X(nom);
 	if(A.Get_dimL() != B.Get_dimL() || A.Get_dimC() != B.Get_dimC()) return NULL;
@@ -84,7 +84,7 @@ Matrice& Soustraction(string nom, Matrice& A, Matrice& B)
 	return X;
 }
 
-Matrice& Multiplication(string nom, Matrice& A, Matrice& B)
+Matrice Multiplication(string nom, Matrice A, Matrice B)
 {
 	Matrice X(nom);
 	if(A.Get_dimC() != B.Get_dimL()) return NULL;
@@ -97,7 +97,7 @@ Matrice& Multiplication(string nom, Matrice& A, Matrice& B)
 	return X;
 }
 
-Matrice& Transposee(string nom, Matrice& A)
+Matrice Transposee(string nom, Matrice A)
 {
 	Matrice X(nom);
 	map<pair<int, int>, int> temp = TRANSPOSEE(A.Get_map());
