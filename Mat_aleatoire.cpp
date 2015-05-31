@@ -78,5 +78,3 @@ void generer_mat_aleatoire(int pourcentage_zero)
 	}
 	Sauvegarde("Mat_aleatoire",MC,nbLigne,nbCol);
 }
-
-void generer_mat_aleatoire
