@@ -83,7 +83,7 @@ bool Chargement(string matr, map <pair<int, int>, int>& matrice, int& dimL, int&
  * \return    un \e booléen selon l'erreur d'ouverture de fichier
  */
 
-bool Sauvegarde(string smatr, map <pair<int, int>, int>& matrice, int& dimL, int& dimC)
+bool Sauvegarde(string smatr, map <pair<int, int>, int> matrice, int dimL, int dimC)
 {
 	ofstream save((smatr+".txt").c_str(), ios::out | ios::trunc);
 
@@ -105,7 +105,6 @@ bool Sauvegarde(string smatr, map <pair<int, int>, int>& matrice, int& dimL, int
 	{
 		cerr <<"Erreur lors de la creation du fichier !" <<endl;
 		return 1;
-
 	}
 }
 
