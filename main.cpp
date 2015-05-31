@@ -28,7 +28,7 @@ using namespace std;
  * \return     Valeur de retour du main.
  */
 int main()
-{
+{/*
     int ope;
     int choix;
     int i = 0;
@@ -55,26 +55,24 @@ int main()
     cout << endl;
 
     cout << "Veuillez selectionner une operation parmi :" << endl << endl;
-    cout << RED <<"1) ADDITION" << endl << GREEN << " 2) MULTIPLICATION" << endl <<  BLUE << " 3) SOUSTRACTION" << endl << YELLOW << " 4) TRANSPOSEE"<< BASIC << endl;
-    cout << "Entrez votre choix :";
+    cout << RED <<"1) ADDITION" << endl << GREEN << "2) MULTIPLICATION" << endl <<  BLUE << "3) SOUSTRACTION" << endl << YELLOW << "4) TRANSPOSEE"<< BASIC << endl;
+    cout << "Entrez votre choix : ";
 
         do
         {
             cin >> ope;
             cin.clear(); // Pour eviter les erreurs sur le cin, effacer les bits d'erreurs 
             cin.ignore(10000, '\n'); // supprimer la ligne erronée dans le buffer
-            if(ope != 1 && ope != 2 && ope != 3 && ope != 4) cout << "Erreur : Veuillez entrer un choix entre 1 et 4 !";
+            if(ope != 1 && ope != 2 && ope != 3 && ope != 4) cout << "Erreur : Veuillez entrer un choix entre 1 et 4 : ";
         }
         while(ope != 1 && ope != 2 && ope != 3 && ope != 4);
 
         if(ope == 1 || ope == 2 || ope == 3)
         {
-
-            for(i = 0; i<2; i++)
-            {
                 do
                 {
-                    cout << "Souhaitez vous 1) Charger   2) Generer la matrice "<< i <<" ?"<<endl;
+                    cout << "Souhaitez vous 1) Charger une matrice d'un fichier txt ?"  
+                    cout << "2) Generer une matrice aleatoire ? "<< endl;
                     cin >> choix;
                     cin.clear(); // Pour eviter les erreurs sur le cin, effacer les bits d'erreurs 
                     cin.ignore(10000, '\n'); // supprimer la ligne erronée dans le buffer
@@ -84,25 +82,25 @@ int main()
 
                 if(choix == 1 && i == 0)
                 {
-                    rech = recherchefich(1);
+                    rech = recherchefich();
                     Chargement(rech[0], A, dimLA, dimCA,nbrElemNN1);
                 }
 
                 else if(choix == 1 && i == 1)
                 {
-                    rech = recherchefich(1);
+                    rech = recherchefich();
                     Chargement(rech[0], B, dimLB, dimCB ,nbrElemNN2);
                 }
 
                 else if(choix == 2 && i == 0)
                 {
-                    rech = recherchefich(1);
+                    rech = recherchefich();
                     Chargement(rech[0], A, dimLB, dimCB ,nbrElemNN2);
                 }
 
                 else if(choix == 2 && i == 1)
                 {
-                    rech = recherchefich(1);
+                    rech = recherchefich();
                     Chargement(rech[0], B, dimLB, dimCB ,nbrElemNN2);
                 }
             }
@@ -143,7 +141,7 @@ int main()
 
             if(choix == 1)
             {
-                rech=recherchefich(1);
+                rech=recherchefich();
                 Chargement(rech[0], A, dimLA, dimCA,nbrElemNN1);
             }
             else
@@ -185,7 +183,7 @@ int main()
             Sauvegarde(nom_sauvegarde.c_str(),Res,dimLRes,dimCRes);
         }
 
-        return 0;
+        return 0;*/
 }
 	
 	
