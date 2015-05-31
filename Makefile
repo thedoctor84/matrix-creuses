@@ -6,13 +6,6 @@ testMatCreuse: libmatcreuse.a test.cpp
 matCreuse: libmatcreuse.a main.cpp
 	g++ -o matCreuse main.cpp -I . -L . -lmatcreuse
 
-
-# A SUPPR ! main: main.o Operation.o pickfich.o Mat_aleatoire.o flots.o
-#	g++ -o test main.o Operation.o pickfich.o Mat_aleatoire.o flots.o
-	
-#A SUPPR ! main.o: main.cpp Operation.h pickfich.h Mat_aleatoire.h flots.h
-#	g++ -o main.o -c main.cpp
-
 libmatcreuse.a : Operation.o pickfich.o Mat_aleatoire.o flots.o 
 	ar rv libmatcreuse.a Operation.o pickfich.o Mat_aleatoire.o flots.o 
  
