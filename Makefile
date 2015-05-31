@@ -6,8 +6,11 @@ testMatCreuse: libmatcreuse.a test.cpp
 matCreuse: libmatcreuse.a main.cpp
 	g++ -o matCreuse main.cpp -I . -L . -lmatcreuse
 
-libmatcreuse.a : Operation.o pickfich.o Mat_aleatoire.o flots.o 
-	ar rv libmatcreuse.a Operation.o pickfich.o Mat_aleatoire.o flots.o 
+libmatcreuse.a : Matrice.o Operation.o pickfich.o Mat_aleatoire.o flots.o 
+	ar rv libmatcreuse.a Matrice.o Operation.o pickfich.o Mat_aleatoire.o flots.o 
+
+Matrice.o: Matrice.cpp Matrice.h
+	g++ -o Matrice.o -c Matrice.cpp
  
 Operation.o: Operation.cpp Operation.h
 	g++ -o Operation.o -c Operation.cpp 
