@@ -78,3 +78,53 @@ void generer_mat_aleatoire(int pourcentage_zero)
 	}
 	Sauvegarde("Mat_aleatoire",MC,nbLigne,nbCol);
 }
+
+//matrice aléatoire avec un % de 0 (ex: mat_alea(70) donne 70% de 0 et le reste aléatoire)
+
+/**
+ * \brief	Fonction qui genere une matrice remplit aleatoirement avec une dimension donnee
+ * \details	Donne une matrice de taille fixee, avec des valeurs aleatoires non nulles entre 1 et 100
+ * \param	nbLigne 			Le nombre de lignes de la matrice
+ * \param	nbCol			Le nombre de colonnes de la matrice
+ * \param	pourcentage_zero 	Le pourcentage de 0 dans la matrice creuse (entier de 0 a 100)
+ */
+
+void generer_mat_aleatoire_taille_fixe(int nbLigne,int nbCol, int pourcentage_zero)
+
+{
+	srand (time(NULL));
+	map<pair<int,int>,int> MC;
+	map <pair<int, int>, int>::iterator it;
+
+	int nombresNonNuls = (int)((100-pourcentage_zero)*nbLigne*nbCol/100);
+
+	int nbAlea = rand_entre_min_et_max(1,100);
+	int indLigAlea = rand_entre_min_et_max(0,nbLigne-1);
+	int indColAlea = rand_entre_min_et_max(0,nbCol-1);
+
+	bool existeDeja;
+
+	MC.insert(pair<pair<int, int>, int> (make_pair(indLigAlea, indColAlea), nbAlea));
+
+	int nbDeNbNonNulsInseres = 1;
+
+	while(nbDeNbNonNulsInseres < nombresNonNuls)
+	{
+		nbAlea = rand_entre_min_et_max(1,100);
+		indLigAlea = rand_entre_min_et_max(0,nbLigne-1);
+		indColAlea = rand_entre_min_et_max(0,nbCol-1);
+		existeDeja = false;
+
+		for(it = MC.begin(); it != MC.end(); it++)
+		{
+			if (indLigAlea == it->first.first && indColAlea == it->first.second) existeDeja = true;
+		}
+
+		if (!existeDeja)
+		{
+			 MC.insert(pair<pair<int, int>, int> (make_pair(indLigAlea, indColAlea), nbAlea));
+			 nbDeNbNonNulsInseres++;
+		}
+	}
+	Sauvegarde("Mat_aleatoire_fixe",MC,nbLigne,nbCol);
+}
