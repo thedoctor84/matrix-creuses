@@ -34,6 +34,8 @@ int main()
 {
     int ope;
     int choix;
+    int i;
+
     map <pair<int, int>, int> A;
     map <pair<int, int>, int> B;
 
@@ -52,23 +54,27 @@ int main()
     int nbrElemNN2;
     int nbrElemNN3;
 
-    cout<<"Bienvenue dans le programme d'interaction des MatrLib"<<endl;
-    cout<<endl;
+    cout << "Bienvenue dans le programme d'interaction des MatrLib" << endl;
+    cout << endl;
 
-        cout<<"Veuillez selectionner une operation parmi :"<<endl;
-        cout<< RED <<"1) ADDITION" << GREEN << " 2) MULTIPLICATION" << BLUE << " 3) SOUSTRACTION" << YELLOW << " 4) TRANSPOSEE"<< BASIC << endl;
-        cin>>ope;
+        cout << "Veuillez selectionner une operation parmi :" << endl;
+        cout << RED <<"1) ADDITION" << GREEN << " 2) MULTIPLICATION" << BLUE << " 3) SOUSTRACTION" << YELLOW << " 4) TRANSPOSEE"<< BASIC << endl;
+        cin >>ope;
+        cin.clear(); // Pour eviter les erreurs sur le cin, effacer les bits d'erreurs 
+        cin.ignore(10000, '\n'); // supprimer la ligne erronée dans le buffer
 
         if(ope == 1 || ope == 2 || ope == 3)
         {
 
 
-            for(int i = 0; i<2; i++)
+            for(i = 0; i<2; i++)
             {
                 do
                 {
-                    cout<<"Souhaitez vous 1) Charger   2) Generer la matrice "<<i<<" ?"<<endl;
+                    cout << "Souhaitez vous 1) Charger   2) Generer la matrice "<< i <<" ?"<<endl;
                     cin >> choix;
+                    cin.clear(); // Pour eviter les erreurs sur le cin, effacer les bits d'erreurs 
+                    cin.ignore(10000, '\n'); // supprimer la ligne erronée dans le buffer
 
                 }while(choix != 1 || choix != 2);
 
@@ -104,18 +110,18 @@ int main()
                 case 1:
                 
                 Res = ADDITION(A, dimLA, dimCA, B, dimLB, dimCB),
-                Affiche(Res, dimLRes,dimCRes,nbrElemNN3);
+                Affiche(Res, dimLRes,dimCRes);
                 break;
 
                case 2:
 
                 Res = MULTIPLICATION(A, dimLA, dimCA, B, dimLB, dimCB),
-                Affiche(Res, dimLRes,dimCRes,nbrElemNN3);
+                Affiche(Res, dimLRes,dimCRes);
                 break;
 
                 case 3 :
                 Res = SOUSTRACTION(A, dimLA, dimCA, B, dimLB, dimCB),
-                Affiche(Res, dimLRes,dimCRes,nbrElemNN3);
+                Affiche(Res, dimLRes,dimCRes);
                 break;
 
             }    
@@ -125,10 +131,12 @@ int main()
         {
             do
             {
-                cout<<"Souhaitez-vous 1) Charger   2) Generer la matrice "<<i<<" ?"<<endl;
+                cout << "Souhaitez-vous 1) Charger   2) Generer la matrice " << i << " ?" << endl;
                 cin >> choix;
+                cin.clear(); // Pour eviter les erreurs sur le cin, effacer les bits d'erreurs 
+                cin.ignore(10000, '\n'); // supprimer la ligne erronée dans le buffer
 
-            }while(choix != 1 || choix != 2)
+            }while(choix != 1 || choix != 2);
 
             if(choix == 1)
             {
@@ -137,21 +145,27 @@ int main()
             }
             else
             {
-                A = generer_mat_aleatoire(95);
+                generer_mat_aleatoire(95);
+                Chargement("Mat_aleatoire",A,dimLA,dimCA,nbrElemNN1);
             }
 
-            Res = TRANSPOSEE(A, dimLA, dimCA),
-            Affiche(Res, dimLRes,dimCRes,nbrElemNN3);
+            Res = TRANSPOSEE(A),
+            Affiche(Res, dimLRes,dimCRes);
         }
         
         char choice;
 
-        cout<<"Voulez-vous sauvegarder la matrice resultante ?(o/n)"<<endl;
-        cin>>choice;
+        cout << "Voulez-vous sauvegarder la matrice resultante ?(o/n)" << endl;
+        cin >> choice;
+        cin.clear(); // Pour eviter les erreurs sur le cin, effacer les bits d'erreurs 
+        cin.ignore(10000, '\n'); // supprimer la ligne erronée dans le buffer
+
         while(choice != 'o' || choice != 'n')
         {
             cout << "Veuillez entrer correctement votre choix :" << endl;
-            cin>>choice;
+            cin >> choice;
+            cin.clear(); // Pour eviter les erreurs sur le cin, effacer les bits d'erreurs 
+            cin.ignore(10000, '\n'); // supprimer la ligne erronée dans le buffer
         }
         if(choice == 'n')
         {
@@ -162,7 +176,10 @@ int main()
             string nom_sauvegarde;
             cout << "Quel nom voulez vous pour la sauvegarde ?" << endl;
             cin >> nom_sauvegarde;
-            Sauvegarde(nom_sauvegarde.c_str(),Alea,nbL,nbC);
+            cin.clear(); // Pour eviter les erreurs sur le cin, effacer les bits d'erreurs 
+            cin.ignore(10000, '\n'); // supprimer la ligne erronée dans le buffer
+
+            Sauvegarde(nom_sauvegarde.c_str(),Res,dimLRes,dimCRes);
         }
 
         return 0;
