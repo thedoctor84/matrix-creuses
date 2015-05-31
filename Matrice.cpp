@@ -52,13 +52,13 @@ void Matrice::Set_dimL(int dim) {dimL = dim;}
 
 void Matrice::Set_dimC(int dim) {dimC = dim;}
 
-void Set_map(map<pair<int, int>, int> X) {M = X;}
+void Matrice::Set_map(map<pair<int, int>, int>& X) {M = X;}
 
 int  Matrice::Get_dimL() {return dimL;}
 
 int  Matrice::Get_dimC() {return dimC;}
 
-map<pair<int, int>, int>& Get_map() {return M;}
+map<pair<int, int>, int> Matrice::Get_map() {return M;}
 
 Matrice& Addition(string nom, Matrice& A, Matrice& B)
 {
