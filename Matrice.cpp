@@ -19,7 +19,7 @@ Matrice::Matrice(string nom)
 	}
 }
 
-Matrice::~Matrice() {delete M;}
+Matrice::~Matrice() {}
 
 bool Matrice::Insertion(int x, int y, int valeur)
 {
@@ -46,48 +46,59 @@ bool Matrice::Affichage()
 	return true;
 }
 
+void Matrice::Set_dimL(int dim) {dimL = dim;}
+
+void Matrice::Set_dimC(int dim) {dimC = dim;}
+
+int  Matrice::Get_dimL() {return dimL;}
+
+int  Matrice::Get_dimC() {return dimC;}
+
+
 Matrice& Addition(string nom, Matrice& A, Matrice& B)
 {
 	Matrice X(nom);
-	if(A.dimL != B.dimL || A.dimC != B.dimC) return NULL;
-
-	X.M = ADDITION(A.M, A.dimL, A.dimC, B.M, B.dimL, B.dimC);
-	X.dimL = A.dimL;
-	X.dimC = B.dimC;
-	Sauvegarde(X.fichier, X.M, X.dimL, X.dimC);
+	if(A->Get_dimL() != B->Get_dimL() || A->Get_dimC() != B->Get_dimC()) return NULL;
+	map<pair<int, int>, int> temp = ADDITION(A.M, A->Get_dimL(), A->Get_dimC(), B->M, B->Get_dimL(), B->Get_dimC());
+	X.M = temp;
+	X->Set_dimL(A->Get_dimL());
+	X->Set_dimC(B->Get_dimC());
+	Sauvegarde(nom, temp, X->Get_dimL(), X->Get_dimC());
 	return X;
 }
 
 Matrice& Soustraction(string nom, Matrice& A, Matrice& B)
 {
 	Matrice X(nom);
-	if(A.dimL != B.dimL || A.dimC != B.dimC) return NULL;
-
-	X.M = SOUSTRACTION(A.M, A.dimL, A.dimC, B.M, B.dimL, B.dimC);
-	X.dimL = A.dimL;
-	X.dimC = B.dimC;
-	Sauvegarde(X.fichier, X.M, X.dimL, X.dimC);
+	if(A->Get_dimL() != B->Get_dimL() || A->Get_dimC() != B->Get_dimC()) return NULL;
+	map<pair<int, int>, int> temp = SOUSTRACTION(A.M, A->Get_dimL(), A->Get_dimC(), B->M, B->Get_dimL(), B->Get_dimC());
+	X.M = temp;
+	X->Set_dimL(A->Get_dimL());
+	X->Set_dimC(B->Get_dimC());
+	Sauvegarde(nom, temp, X->Get_dimL(), X->Get_dimC());
 	return X;
 }
 
 Matrice& Multiplication(string nom, Matrice& A, Matrice& B)
 {
 	Matrice X(nom);
-	if(A.dimC != B.dimL) return NULL;
+	if(A->Get_dimC() != B->Get_dimL()) return NULL;
 
-	X.M = MULTIPLICATION(A.M, A.dimL, A.dimC, B.M, B.dimL, B.dimC);
-	X.dimL = A.dimL;
-	X.dimC = B.dimC;
-	Sauvegarde(X.fichier, X.M, X.dimL, X.dimC);
+	map<pair<int, int>, int> temp = MULTIPLICATION(A.M, A->Get_dimL(), A->Get_dimC(), B->M, B->Get_dimL(), B->Get_dimC());
+	X.M = temp;
+	X->Set_dimL(A->Get_dimL());
+	X->Set_dimC(B->Get_dimC());
+	Sauvegarde(nom, temp, X->Get_dimL(), X->Get_dimC());
 	return X;
 }
 
 Matrice& Transposee(string nom, Matrice& A)
 {
 	Matrice X(nom);
-	X.M = TRANSPOSEE(A.M);
-	X.dimL = A.dimL;
-	X.dimC = A.dimC;
-	Sauvegarde(X.fichier, X.M, X.dimL, X.dimC);
+	map<pair<int, int>, int> temp = TRANSPOSEE(A.M);
+	X.M = temp;
+	X->Set_dimL(A->Get_dimL());
+	X->Set_dimC(A->Get_dimC());
+	Sauvegarde(nom, temp, X->Get_dimL(), X->Get_dimC());
 	return X;
 }
