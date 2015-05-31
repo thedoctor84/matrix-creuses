@@ -31,40 +31,37 @@ bool file_exist(string& fichier)
 /**
  * \brief       recherche les fichiers présent dans une liste.
  * \details    Parmis la liste des fichiers disponible, teste l'existence du fichier donné par l'utilisateur, et renvoie des noms de ceux-ci.
- * \param    fichprincipal      fichier contenant la liste des fichiers matrices.
- * \param    nbfich         	nombre de fichiers que l'utilisateur désire.
- * \return    retourne un tableau contenant les noms des fichiers séléctionnés.
+ * \return    retourne un string contenant le nom du fichier séléctionné.
  */
-string* recherchefich(int nbfich)
+string recherchefich()
 {
 	 
 	ifstream fichier("main.txt", ios::in);
 	if(fichier) 
 	{
 		string ligne;
-		string *fich_choisie = new string[nbfich];
+		string fich_choisie;
 		string tmp ="";
 		while(getline(fichier, ligne))			// affiche la liste des fichiers de matrices disponible
 		{
-					cout << ligne << endl;
+			cout << ligne << endl;
 		}
        	 	
-		for(int i=0;i<nbfich;i++)
+
+		cout << "de quel fichier avez vous besoin ?" << endl;
+		cin >> tmp;
+				
+		while(!file_exist(tmp))		//tant que le fichier n'existe pas, demander le nom du fichier voulue
 		{
-				do
-				{
-					cout << "de quel fichier avez vous besoin ?" << endl;
-					cin >> tmp;
-				}
-				while(!file_exist(tmp));		//tant que le fichier n'existe pas, demander le nom du fichier voulue 
-				fich_choisie[i] = tmp; 
+			cout << "Le fichier n'existe pas, veuillez saisir un nom de fichier valide" << endl;
+			cin >> tmp;
+		} 
+		fich_choisie = tmp; 
 		
-		}
+	
 
 		fichier.close();
 		return fich_choisie;
-		
- 		
 	}
 	else 
 	{
