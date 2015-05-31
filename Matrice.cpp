@@ -7,7 +7,22 @@
 #include "Mat_aleatoire.h"
 
 using namespace std;
+/**
+ * \file      Matrice.cpp
+ * \author    Rémi Drissi
+ * \version   4.0
+ * \date      29 mai 2015
+ * \brief     Effectue les opérations sur les matrice à partir d'une classe.
+ *
+ * \details   Les fonctions sur les matrices ont étés crée de façon à utiliser l'objet Matrice pour que l'utilisateur est une gestion facile des matrices.
+ */
 
+
+/**
+ * \brief	Constructeur de Matrice.
+ * \details	initialise le nom et les dimension de la matrice et test l'existence du fichier.
+ * \param	nom			nom de la Matrice.
+ */
 Matrice::Matrice(string nom)
 {
 	fichier = nom;
@@ -20,8 +35,18 @@ Matrice::Matrice(string nom)
 	}
 }
 
+
 Matrice::~Matrice() {}
 
+
+/**
+ * \brief	Fonction Insertion
+ * \details	insère une valeur dans une matrice selon ses coordonnées.
+ * \param	x			indice en ligne.
+ * \param	y			indice en colonne.
+ * \param	valeur		valeur à ajouter.
+ * \return	Retourne un booléen selon si on peut insérer ou pas et insère si oui.
+ */
 bool Matrice::Insertion(int x, int y, int valeur)
 {
 	if (x < 0 || y < 0 || x > dimL || y > dimC) return false;
@@ -40,6 +65,11 @@ bool Matrice::Insertion(int x, int y, int valeur)
 	return true;
 }
 
+/**
+ * \brief	Fonction Affichage.
+ * \details	Affiche la matrice.
+ * \return	Retourne un booléen selon si on peut afficher ou pas et affiche si oui.
+ */
 bool Matrice::Affichage()
 {
 	if(nbrElemNN < 0) return false;
@@ -60,6 +90,15 @@ int  Matrice::Get_dimC() {return dimC;}
 
 map<pair<int, int>, int> Matrice::Get_map() {return M;}
 
+
+/**
+ * \brief	Fonction Addition
+ * \details	Additionne deux matrices après avoir tester les conditions nécéssaire.
+ * \param	nom			nom de la matrice. 
+ * \param	A			Matrice A.
+ * \param	B			Matrice B.
+ * \return	Retourne une Matrice, addition de A et de B.
+ */
 Matrice Addition(string nom, Matrice A, Matrice B)
 {
 	if(A.Get_dimL() != B.Get_dimL() || A.Get_dimC() != B.Get_dimC())
@@ -78,6 +117,14 @@ Matrice Addition(string nom, Matrice A, Matrice B)
 	return X;
 }
 
+/**
+ * \brief	Fonction Soustraction
+ * \details	Soustrait deux matrices après avoir tester les conditions nécéssaire.
+ * \param	nom			nom de la matrice. 
+ * \param	A			Matrice A.
+ * \param	B			Matrice B.
+ * \return	Retourne une Matrice, soustraction de A et de B.
+ */
 Matrice Soustraction(string nom, Matrice A, Matrice B)
 {
 
@@ -96,6 +143,14 @@ Matrice Soustraction(string nom, Matrice A, Matrice B)
 	return X;
 }
 
+/**
+ * \brief	Fonction Multiplication
+ * \details	Multiplie deux matrices après avoir tester les conditions nécéssaire.
+ * \param	nom			nom de la matrice. 
+ * \param	A			Matrice A.
+ * \param	B			Matrice B.
+ * \return	Retourne une Matrice, multiplication de A et de B.
+ */
 Matrice Multiplication(string nom, Matrice A, Matrice B)
 {
 
@@ -114,6 +169,13 @@ Matrice Multiplication(string nom, Matrice A, Matrice B)
 	return X;
 }
 
+/**
+ * \brief	Fonction Transposee
+ * \details	Effectue la transposee d'une matrice A
+ * \param	nom			nom de la matrice.
+ * \param	A			Matrice A.
+ * \return	Retourne une Matrice, transposee de A.
+ */
 Matrice Transposee(string nom, Matrice A)
 {
 	Matrice X(nom);
