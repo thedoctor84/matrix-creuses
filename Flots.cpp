@@ -99,12 +99,12 @@ bool Sauvegarde(string smatr, map <pair<int, int>, int> matrice, int dimL, int d
 			save<<it->first.first <<" "<< it->first.second <<" "<<it->second<<endl; 
 		}
 		save.close();
-		return 0;
+		return false;
 	}
 	else
 	{
 		cerr <<"Erreur lors de la creation du fichier !" <<endl;
-		return 1;
+		return true;
 	}
 }
 
@@ -119,6 +119,10 @@ bool Sauvegarde(string smatr, map <pair<int, int>, int> matrice, int dimL, int d
 
 void Affiche(map <pair<int, int>, int> matrice, int dimL, int dimC)
 {
+	if(dimL == 0 && dimC == 0)
+	{
+		cerr<<"Erreur, la matrice est vide !"<<endl;
+	}
 	map <pair<int,int>, int>::iterator it;
 	it = matrice.begin();
 	for(int i = 0; i < dimL; ++i)
