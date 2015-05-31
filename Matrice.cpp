@@ -41,37 +41,33 @@ bool Matrice::Affichage()
 Matrice& Addition(string nom, Matrice& A, Matrice& B)
 {
 	Matrice X(nom);
-	if(A.dimC != B.dimL)
-	{
-		X.M = ADDITION(A.M, A.dimL, A.dimC, B.M, B.dimL, B.dimC);
-		X.dimL = A.dimL;
-		X.dimC = B.dimC;
-	}
-
+	if(A.dimL != B.dimL || A.dimC != B.dimC) return NULL;
+	
+	X.M = ADDITION(A.M, A.dimL, A.dimC, B.M, B.dimL, B.dimC);
+	X.dimL = A.dimL;
+	X.dimC = B.dimC;
 	return X;
 }
 
 Matrice& Soustraction(string nom, Matrice& A, Matrice& B)
 {
 	Matrice X(nom);
-	if(A.dimL != B.dimL || A.dimC != B.dimC)
-	{
-		X.M = SOUSTRACTION(A.M, A.dimL, A.dimC, B.M, B.dimL, B.dimC);
-		X.dimL = A.dimL;
-		X.dimC = B.dimC;
-	}
+	if(A.dimL != B.dimL || A.dimC != B.dimC) return NULL;
+	
+	X.M = SOUSTRACTION(A.M, A.dimL, A.dimC, B.M, B.dimL, B.dimC);
+	X.dimL = A.dimL;
+	X.dimC = B.dimC;
 	return X;
 }
 
 Matrice& Multiplication(string nom, Matrice& A, Matrice& B)
 {
 	Matrice X(nom);
-	if(A.dimC != B.dimL)
-	{
-		X.M = MULTIPLICATION(A.M, A.dimL, A.dimC, B.M, B.dimL, B.dimC);
-		X.dimL = A.dimL;
-		X.dimC = B.dimC;
-	}
+	if(A.dimC != B.dimL) return NULL;
+	
+	X.M = MULTIPLICATION(A.M, A.dimL, A.dimC, B.M, B.dimL, B.dimC);
+	X.dimL = A.dimL;
+	X.dimC = B.dimC;
 	return X;
 }
 
