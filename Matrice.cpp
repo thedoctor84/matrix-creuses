@@ -32,6 +32,13 @@ Matrice::Matrice(string nom)
 	Chargement(fichier, M, dimL, dimC, nbrElemNN);
 }
 
+/**
+ * \brief	Constructeur de Matrice.
+ * \details	initialise le nom et les dimension de la matrice selon des coordonnées donnés en argument.
+ * \param	nom			nom de la Matrice.
+  * \param	x			indice en ligne
+   * \param	y			indice en colonne.
+ */
 Matrice::Matrice(string nom, int x, int y)
 {
 	fichier = nom;
