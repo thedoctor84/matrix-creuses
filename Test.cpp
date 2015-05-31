@@ -12,8 +12,8 @@ int main()
 {
     map <pair<int, int>, int> A;
     map <pair<int, int>, int> B;
+
     map <pair<int, int>, int> Res;
-    
     int dimLA;
     int dimCA;
     int dimLRes;
@@ -30,18 +30,11 @@ int main()
 
     cout << "Tester : 1)Addition    2)Multiplication    3)Soustraction  4)Transposee" << endl;
     cin >> choix;
-    cin.clear(); // Pour eviter les erreurs sur le cin, effacer les bits d'erreurs 
-    cin.ignore(10000, '\n'); // supprimer la ligne erronée dans le buffer
-
     while(choix < 1 || choix > 4)
     {
         cout << "saisissez le bon numero svp :" << endl;
         cin >> choix;
-        cin.clear(); // Pour eviter les erreurs sur le cin, effacer les bits d'erreurs 
-    	cin.ignore(10000, '\n'); // supprimer la ligne erronée dans le buffer
-
     }
-
     if(choix == 1)
     {
         generer_mat_aleatoire(95);
