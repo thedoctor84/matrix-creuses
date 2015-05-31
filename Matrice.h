@@ -16,6 +16,10 @@ class Matrice
 	public:
     	Matrice(string);
 		~Matrice();
+		void Set_dimL(int);
+		void Set_dimC(int);
+		int  Get_dimL();
+		int  Get_dimC();
 		bool Insertion(int x, int y, int valeur);
 		bool Affichage();
 };
