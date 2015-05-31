@@ -25,6 +25,7 @@ int main()
     int nbrElemNNA;
     int nbrElemNNB;
     int choix;
+    bool test;
 
     string mat_aleatoire = "Mat_aleatoire";
 
@@ -45,36 +46,108 @@ int main()
     if(choix == 1)
     {
         generer_mat_aleatoire(95);
-        Chargement(mat_aleatoire, A, dimLA, dimCA, nbrElemNNA);
-        generer_mat_aleatoire(95);
-        Chargement(mat_aleatoire, B, dimLB, dimCB, nbrElemNNB);
-        Res = ADDITION(A, dimLA, dimCA, B, dimLB, dimCB);
-        Affiche(Res, dimLRes, dimCRes);
+        test = Chargement(mat_aleatoire, A, dimLA, dimCA, nbrElemNNA);
+        if(test == true)
+        {
+            generer_mat_aleatoire(95);
+            test = Chargement(mat_aleatoire, B, dimLB, dimCB, nbrElemNNB);
+            if(test == true)
+            {
+                Res = ADDITION(A, dimLA, dimCA, B, dimLB, dimCB);
+                dimLRes = dimLA;
+                dimCRes = dimCA;
+                Affiche(A, dimLA, dimCA);
+                cout << endl;
+                Affiche(B, dimLB, dimCB);
+                cout << endl;
+                Affiche(Res, dimLRes, dimCRes);
+            }
+            else
+            {
+                cerr << "Erreur à l'ouverture" << endl;
+            }
+        }
+        else
+        {
+            cerr << "Erreur à l'ouverture" << endl;
+        }
     }
     else if(choix == 2)
     {
         generer_mat_aleatoire(95);
-        Chargement(mat_aleatoire, A, dimLA, dimCA, nbrElemNNA);
-        generer_mat_aleatoire(95);
-        Chargement(mat_aleatoire, B, dimLB, dimCB, nbrElemNNB);
-        Res = MULTIPLICATION(A, dimLA, dimCA, B, dimLB, dimCB);
-        Affiche(Res, dimLRes, dimCRes);
+        test = Chargement(mat_aleatoire, A, dimLA, dimCA, nbrElemNNA);
+        if(test == true)
+        {
+            generer_mat_aleatoire(95);
+            test = Chargement(mat_aleatoire, B, dimLB, dimCB, nbrElemNNB);
+            if(test == true)
+            {
+                Res = MULTIPLICATION(A, dimLA, dimCA, B, dimLB, dimCB);
+                dimLRes = dimLA;
+                dimCRes = dimCB;
+                Affiche(A, dimLA, dimCA);
+                cout << endl;
+                Affiche(B, dimLB, dimCB);
+                cout << endl;
+                Affiche(Res, dimLRes, dimCRes);
+            }
+            else
+            {
+                cerr << "Erreur à l'ouverture" << endl;
+            }
+        }
+        else
+        {
+            cerr << "Erreur à l'ouverture" << endl;
+        }
     }
     else if(choix == 3)
     {
         generer_mat_aleatoire(95);
-        Chargement(mat_aleatoire, A, dimLA, dimCA, nbrElemNNA);
-        generer_mat_aleatoire(95);
-        Chargement(mat_aleatoire, B, dimLB, dimCB, nbrElemNNB);
-        Res = SOUSTRACTION(A, dimLA, dimCA, B, dimLB, dimCB);
-        Affiche(Res, dimLRes, dimCRes);
+        test = Chargement(mat_aleatoire, A, dimLA, dimCA, nbrElemNNA);
+        if(test == true)
+        {
+            generer_mat_aleatoire(95);
+            test = Chargement(mat_aleatoire, B, dimLB, dimCB, nbrElemNNB);
+            if(test == true)
+            {
+                Res = SOUSTRACTION(A, dimLA, dimCA, B, dimLB, dimCB);
+                dimLRes = dimLA;
+                dimCRes = dimCA;
+                Affiche(A, dimLA, dimCA);
+                cout << endl;
+                Affiche(B, dimLB, dimCB);
+                cout << endl;
+                Affiche(Res, dimLRes, dimCRes);
+            }
+            else
+            {
+                cerr << "Erreur à l'ouverture" << endl;
+            }
+        }
+        else
+        {
+            cerr << "Erreur à l'ouverture" << endl;
+        }
     }
     else if(choix == 4)
     {
         generer_mat_aleatoire(95);
-        Chargement(mat_aleatoire, A, dimLA, dimCA, nbrElemNNA);
-        Res = TRANSPOSEE(A);
-        Affiche(Res, dimLRes, dimCRes);
+        test = Chargement(mat_aleatoire, A, dimLA, dimCA, nbrElemNNA);
+        if(test == true)
+        {
+            Res = TRANSPOSEE(A);
+            Affiche(A, dimLA, dimCA);
+            cout << endl;
+            Affiche(Res, dimCA, dimLA);
+            
+
+        }
+        else
+        {
+            cerr << "Erreur à l'ouverture" << endl;
+        }
+
     }
 
         return 0;
