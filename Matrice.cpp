@@ -25,6 +25,14 @@ bool Matrice::Insertion(int x, int y, int valeur)
 {
 	if (x < 0 || y < 0 || x > dimL || y > dimC) return false;
 
+	for (it = M.begin(); it != M.end(); it++)
+	{
+		if(it->first.first == x && it->first.second == y) 
+		{
+			M.erase(it);
+		}
+	}
+
 	M.insert(pair<pair<int, int>, int> (make_pair(x, y), valeur));
 	Sauvegarde(fichier, M, dimL, dimC);
 	return true;
