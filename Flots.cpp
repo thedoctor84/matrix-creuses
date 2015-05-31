@@ -65,11 +65,11 @@ bool Chargement(string matr, map <pair<int, int>, int>& matrice, int& dimL, int&
 			matrice.insert(pair<pair<int,int>,int> (make_pair(posL,posC),val));
 		}
 		ouv.close();
-		return 0;
+		return true;
 	}
 	else	//cas d'erreur lors de l'ouverture de la matrice
 	{
-		return 1;
+		return false;
 	}
 }
 
