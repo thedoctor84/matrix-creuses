@@ -46,14 +46,20 @@ int main()
     if(choix == 1)
     {
         generer_mat_aleatoire(95);
-        test = Chargement(mat_aleatoire.c_str(), A, dimLA, dimCA, nbrElemNNA);
+        test = Chargement(mat_aleatoire, A, dimLA, dimCA, nbrElemNNA);
         if(test == true)
         {
             generer_mat_aleatoire(95);
-            test = Chargement(mat_aleatoire.c_str(), B, dimLB, dimCB, nbrElemNNB);
+            test = Chargement(mat_aleatoire, B, dimLB, dimCB, nbrElemNNB);
             if(test == true)
             {
                 Res = ADDITION(A, dimLA, dimCA, B, dimLB, dimCB);
+                dimLRes = dimLA + dimLB;
+                dimCRes = dimCA + dimCB;
+                Affiche(A, dimLA, dimCA);
+                cout << endl;
+                Affiche(B, dimLB, dimCB);
+                cout << endl;
                 Affiche(Res, dimLRes, dimCRes);
             }
             else
@@ -69,14 +75,20 @@ int main()
     else if(choix == 2)
     {
         generer_mat_aleatoire(95);
-        test = Chargement(mat_aleatoire.c_str(), A, dimLA, dimCA, nbrElemNNA);
+        test = Chargement(mat_aleatoire, A, dimLA, dimCA, nbrElemNNA);
         if(test == true)
         {
             generer_mat_aleatoire(95);
-            test = Chargement(mat_aleatoire.c_str(), B, dimLB, dimCB, nbrElemNNB);
+            test = Chargement(mat_aleatoire, B, dimLB, dimCB, nbrElemNNB);
             if(test == true)
             {
                 Res = MULTIPLICATION(A, dimLA, dimCA, B, dimLB, dimCB);
+                dimLRes = dimLA + dimLB;
+                dimCRes = dimCA + dimCB;
+                Affiche(A, dimLA, dimCA);
+                cout << endl;
+                Affiche(B, dimLB, dimCB);
+                cout << endl;
                 Affiche(Res, dimLRes, dimCRes);
             }
             else
@@ -92,15 +104,21 @@ int main()
     else if(choix == 3)
     {
         generer_mat_aleatoire(95);
-        test = Chargement(mat_aleatoire.c_str(), A, dimLA, dimCA, nbrElemNNA);
+        test = Chargement(mat_aleatoire, A, dimLA, dimCA, nbrElemNNA);
         if(test == true)
         {
             generer_mat_aleatoire(95);
-            test = Chargement(mat_aleatoire.c_str(), B, dimLB, dimCB, nbrElemNNB);
+            test = Chargement(mat_aleatoire, B, dimLB, dimCB, nbrElemNNB);
             if(test == true)
             {
                 Res = SOUSTRACTION(A, dimLA, dimCA, B, dimLB, dimCB);
+                dimLRes = dimLA + dimLB;
+                dimCRes = dimCA + dimCB;
                 Affiche(Res, dimLRes, dimCRes);
+                cout << endl;
+                Affiche(A, dimLA, dimCA);
+                cout << endl;
+                Affiche(B, dimLB, dimCB);
             }
             else
             {
@@ -115,11 +133,15 @@ int main()
     else if(choix == 4)
     {
         generer_mat_aleatoire(95);
-        test = Chargement(mat_aleatoire.c_str(), A, dimLA, dimCA, nbrElemNNA);
+        test = Chargement(mat_aleatoire, A, dimLA, dimCA, nbrElemNNA);
         if(test == true)
         {
             Res = TRANSPOSEE(A);
+            dimLRes = dimLA + dimLB;
             Affiche(Res, dimLRes, dimCRes);
+            cout << endl;
+            Affiche(A, dimLA, dimCA);
+
         }
         else
         {
