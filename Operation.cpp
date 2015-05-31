@@ -41,7 +41,8 @@ map<pair<int, int>, int> TRANSPOSEE(map<pair<int, int>, int> A)
  */
 map<pair<int, int>, int> ADDITION(map<pair<int, int>, int> A, int Lig_A, int Col_A, map<pair<int, int>, int> B, int Lig_B, int Col_B)
 {
-	if (Col_A != Col_B || Lig_A != Lig_B) return NULL;	/** Si les dimensions des 2 matrices ne sont pas propices a l'addition : retour */
+	map<pair<int, int>, int> fail;
+	if (Col_A != Col_B || Lig_A != Lig_B) return fail;	/** Si les dimensions des 2 matrices ne sont pas propices a l'addition : retour */
 	map <pair<int, int>, int> C;
 	map <pair<int, int>, int>::iterator it1;
 	map <pair<int, int>, int>::iterator it2;
@@ -102,8 +103,9 @@ map<pair<int, int>, int> ADDITION(map<pair<int, int>, int> A, int Lig_A, int Col
  * \return	Retourne la 3ème matrice créée précédemment
  */
 map<pair<int, int>, int> SOUSTRACTION(map<pair<int, int>, int> A, int Lig_A, int Col_A, map<pair<int, int>, int> B, int Lig_B, int Col_B)
-{				
-	if (Col_A != Col_B || Lig_A != Lig_B) return NULL;	/** Retour si les dimensions ne sont pas propices à la soustraction */
+{		
+	map<pair<int, int>, int> fail;		
+	if (Col_A != Col_B || Lig_A != Lig_B) return fail;	/** Retour si les dimensions ne sont pas propices à la soustraction */
 	map <pair<int, int>, int> C;
 	map <pair<int, int>, int>::iterator it1;
 	map <pair<int, int>, int>::iterator it2;
@@ -165,7 +167,9 @@ map<pair<int, int>, int> SOUSTRACTION(map<pair<int, int>, int> A, int Lig_A, int
  */
 map<pair<int, int>, int> MULTIPLICATION(map<pair<int, int>, int> A, int Lig_A, int Col_A, map<pair<int, int>, int> B, int Lig_B, int Col_B)
 {
-	if (Col_A != Lig_B) return NULL;				/** Retour si les dimensions ne sont pas propices à la multiplication */
+	map<pair<int, int>, int> fail;
+
+	if (Col_A != Lig_B) return fail;				/** Retour si les dimensions ne sont pas propices à la multiplication */
 	map <pair<int, int>, int> C;				/** Matrice crée et retournée */	
 	map <pair<int, int>, int>::iterator it1;	/** Création de l'iterateur qui parcourera la matrice A */
 	map <pair<int, int>, int>::iterator it2;	/** Création de l'iterateur qui parcourera la matrice B */
