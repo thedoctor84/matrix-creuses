@@ -1,13 +1,21 @@
+/**
+ * \file		Operation.cpp
+ * \author		Rémi Drissi
+ * \version		4.0
+ * \date		29 mai 2015
+ * \brief		Fichier qui regroupe les différentes opérations applicables aux matrices
+ * \details		Contient toute les fonctiones qui permettent de faire de opérations sur les matrices,
+ * 				gérées avec des structures de map
+ */
 #include "Operation.h"
 #include <map>
-#include <iostream>
 using namespace std;
 
 /**
  * \brief	Fonction qui transpose une matrice
  * \details	Parcourt la matrice pour inverser sa pair d'indices
  * \param	A			Matrice qui va être transposée
-
+ * \return	Retourne la matrice créée précédemment
  */
 map<pair<int, int>, int> TRANSPOSEE(map<pair<int, int>, int> A)
 {
@@ -29,17 +37,18 @@ map<pair<int, int>, int> TRANSPOSEE(map<pair<int, int>, int> A)
  * \param	B			Deuxieme Matrice
  * \param	Lig_B		Nombre de lignes dans la matrice B
  * \param	Col_B		Nombre de colonnes dans la matrice B
+ * \return	Retourne la 3ème matrice créée précédemment
  */
 map<pair<int, int>, int> ADDITION(map<pair<int, int>, int> A, int Lig_A, int Col_A, map<pair<int, int>, int> B, int Lig_B, int Col_B)
 {
-	map <pair<int, int>, int> C; 
-	if (Col_A != Lig_B) return C;	/** Si les dimensions des 2 matrices ne sont pas propices a l'addition : retour */
+	if (Col_A != Col_B || Lig_A != Lig_B) return NULL;	/** Si les dimensions des 2 matrices ne sont pas propices a l'addition : retour */
+	map <pair<int, int>, int> C;
 	map <pair<int, int>, int>::iterator it1;
 	map <pair<int, int>, int>::iterator it2;
-	it1 = A.begin();				/** Initialisation des itérateurs */
-	it2 = B.begin();				/** Initialisation des itérateurs */
+	it1 = A.begin();								/** Initialisation des itérateurs */
+	it2 = B.begin();								/** Initialisation des itérateurs */
 
-	while (it1 != A.end() || it2 != B.end())	/** Répétition de l'opération tant que les 2 itérateurs n'ont pas atteint la fin de leur matrice */
+	while (it1 != A.end() || it2 != B.end())		/** Répétition de l'opération tant que les 2 itérateurs n'ont pas atteint la fin de leur matrice */
 	{
 		
 		if(it1->first.first == it2->first.first)					/** Dans le cas où i de A == i de B */
@@ -90,15 +99,16 @@ map<pair<int, int>, int> ADDITION(map<pair<int, int>, int> A, int Lig_A, int Col
  * \param	B			Deuxieme Matrice
  * \param	Lig_B		Nombre de lignes dans la matrice B
  * \param	Col_B		Nombre de colonnes dans la matrice B
+ * \return	Retourne la 3ème matrice créée précédemment
  */
 map<pair<int, int>, int> SOUSTRACTION(map<pair<int, int>, int> A, int Lig_A, int Col_A, map<pair<int, int>, int> B, int Lig_B, int Col_B)
-{
-	map <pair<int, int>, int> C;				
-	if (Col_A != Lig_B) return C;				/** Retour si les dimensions ne sont pas propices à la soustraction */
+{				
+	if (Col_A != Col_B || Lig_A != Lig_B) return NULL;	/** Retour si les dimensions ne sont pas propices à la soustraction */
+	map <pair<int, int>, int> C;
 	map <pair<int, int>, int>::iterator it1;
 	map <pair<int, int>, int>::iterator it2;
-	it1 = A.begin();							/** Initialisation des itérateurs */
-	it2 = B.begin();							/** Initialisation des itérateurs */
+	it1 = A.begin();								/** Initialisation des itérateurs */
+	it2 = B.begin();								/** Initialisation des itérateurs */
 
 	while (it1 != A.end() || it2 != B.end())
 	{
@@ -144,18 +154,19 @@ map<pair<int, int>, int> SOUSTRACTION(map<pair<int, int>, int> A, int Lig_A, int
 /**
  * \brief	Fonction qui multiplie 2 matrices entre-elles
  * \details	Parcourt les 2 matrices à l'aide de 2 itérateurs, et met le résultat de la multiplication
- *			dans une 3ème matrice qui sera retournée
+ *			dans une 3ème matrice
  * \param	A			Premiere Matrice
  * \param	Lig_A   	Nombre de lignes dans la matrice A
  * \param	Col_A		Nombre de colonnes dans la matrice A
  * \param	B			Deuxieme Matrice
  * \param	Lig_B		Nombre de lignes dans la matrice B
  * \param	Col_B		Nombre de colonnes dans la matrice B
+ * \return	Retourne la 3ème matrice créée précédemment
  */
 map<pair<int, int>, int> MULTIPLICATION(map<pair<int, int>, int> A, int Lig_A, int Col_A, map<pair<int, int>, int> B, int Lig_B, int Col_B)
 {
-	map <pair<int, int>, int> C;				/** Matrice crée et retournée */
-	if (Col_A != Lig_B) return C;				/** Retour si les dimensions ne sont pas propices à la multiplication */
+	if (Col_A != Lig_B) return NULL;				/** Retour si les dimensions ne sont pas propices à la multiplication */
+	map <pair<int, int>, int> C;				/** Matrice crée et retournée */	
 	map <pair<int, int>, int>::iterator it1;	/** Création de l'iterateur qui parcourera la matrice A */
 	map <pair<int, int>, int>::iterator it2;	/** Création de l'iterateur qui parcourera la matrice B */
 	for(int i=0; i<Lig_A; ++i)					/** Double-boucle pour parcourir toute la matrice cible */
