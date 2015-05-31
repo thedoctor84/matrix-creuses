@@ -69,7 +69,6 @@ bool Chargement(string matr, map <pair<int, int>, int>& matrice, int& dimL, int&
 	}
 	else	//cas d'erreur lors de l'ouverture de la matrice
 	{
-		cerr<<"Ouverture de "<<matr<<"impossible !"<<endl; 
 		return 1;
 	}
 }
