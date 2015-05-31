@@ -119,7 +119,7 @@ bool Sauvegarde(string smatr, map <pair<int, int>, int> matrice, int dimL, int d
 
 void Affiche(map <pair<int, int>, int> matrice, int dimL, int dimC)
 {
-	if(matrice.empty())
+	if(dimL == 0 && dimC == 0)
 	{
 		cerr<<"Erreur, la matrice est vide !"<<endl;
 		return;

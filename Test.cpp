@@ -75,11 +75,11 @@ int main()
     }
     else if(choix == 2)
     {
-        generer_mat_aleatoire_taille_fixe(8,14,95);
+        generer_mat_aleatoire_taille_fixe(15,15,95);
         test = Chargement("Mat_aleatoire_fixe", A, dimLA, dimCA, nbrElemNNA);
         if(test == true)
         {
-            generer_mat_aleatoire_taille_fixe(14,18,95);
+            generer_mat_aleatoire_taille_fixe(15,15,95);
             test = Chargement("Mat_aleatoire_fixe", B, dimLB, dimCB, nbrElemNNB);
             if(test == true)
             {
@@ -96,6 +96,10 @@ int main()
                 }
                 else
                 {
+                    Affiche(A, dimLA, dimCA);
+                    cout << endl;
+                    Affiche(B, dimLB, dimCB);
+
                     cerr << "Multiplication impossible !" <<endl;
                 }
             }

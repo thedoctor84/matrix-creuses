@@ -185,7 +185,7 @@ map<pair<int, int>, int> MULTIPLICATION(map<pair<int, int>, int> A, int Lig_A, i
 				while (it1 != A.end() && ((it1->first.first < i) || (it1->first.second < k))) it1++; /** incrementation des itérateurs */
 				while (it2 != B.end() && ((it2->first.second < j) || (it2->first.first < k))) it2++; /** incrementation des itérateurs */
 
-				if (it1->first.second == k && it2->first.first == k && it1->first.first == i && it2->first.second == j)
+				if (it1!=A.end() && it2!=B.end() && it1->first.second == k && it2->first.first == k && it1->first.first == i && it2->first.second == j)
 				{
 					temp += (it1->second * it2->second); /** On ajoute notre multiplication à une valeur temporaire */
 				}
