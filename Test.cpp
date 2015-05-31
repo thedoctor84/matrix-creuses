@@ -2,6 +2,7 @@
 #include <string>
 #include <map>
 #include "libmatcreuse.h"
+#include <unistd.h>
 
 
 
@@ -75,6 +76,7 @@ int main()
     else if(choix == 2)
     {
         generer_mat_aleatoire(95);
+        usleep(1000000);
         test = Chargement(mat_aleatoire, A, dimLA, dimCA, nbrElemNNA);
         if(test == true)
         {
@@ -148,7 +150,7 @@ int main()
             Res = TRANSPOSEE(A);
             Affiche(A, dimLA, dimCA);
             cout << endl;
-            Affiche(Res, dimLA, dimCA);
+            Affiche(Res, dimCA, dimLA);
             
 
         }
