@@ -75,13 +75,12 @@ int main()
     }
     else if(choix == 2)
     {
-        generer_mat_aleatoire(95);
-        usleep(1000000);
-        test = Chargement(mat_aleatoire, A, dimLA, dimCA, nbrElemNNA);
+        generer_mat_aleatoire_taille_fixe(8,14,95);
+        test = Chargement("Mat_aleatoire_fixe", A, dimLA, dimCA, nbrElemNNA);
         if(test == true)
         {
-            generer_mat_aleatoire(95);
-            test = Chargement(mat_aleatoire, B, dimLB, dimCB, nbrElemNNB);
+            generer_mat_aleatoire_taille_fixe(14,18,95);
+            test = Chargement("Mat_aleatoire_fixe", B, dimLB, dimCB, nbrElemNNB);
             if(test == true)
             {
                 Res = MULTIPLICATION(A, dimLA, dimCA, B, dimLB, dimCB);
