@@ -62,8 +62,14 @@ map<pair<int, int>, int> Matrice::Get_map() {return M;}
 
 Matrice Addition(string nom, Matrice A, Matrice B)
 {
+	if(A.Get_dimL() != B.Get_dimL() || A.Get_dimC() != B.Get_dimC())
+	{
+		Matrice Matfail("fail");
+		return Matfail;
+
+	}
+
 	Matrice X(nom);
-	if(A.Get_dimL() != B.Get_dimL() || A.Get_dimC() != B.Get_dimC()) return NULL;
 	map<pair<int, int>, int> temp = ADDITION(A.Get_map(), A.Get_dimL(), A.Get_dimC(), B.Get_map(), B.Get_dimL(), B.Get_dimC());
 	X.Set_map(temp);
 	X.Set_dimL(A.Get_dimL());
@@ -74,8 +80,14 @@ Matrice Addition(string nom, Matrice A, Matrice B)
 
 Matrice Soustraction(string nom, Matrice A, Matrice B)
 {
+
+	if(A.Get_dimL() != B.Get_dimL() || A.Get_dimC() != B.Get_dimC())
+	{
+		Matrice Matfail("fail");
+		return Matfail;
+	}
+
 	Matrice X(nom);
-	if(A.Get_dimL() != B.Get_dimL() || A.Get_dimC() != B.Get_dimC()) return NULL;
 	map<pair<int, int>, int> temp = SOUSTRACTION(A.Get_map(), A.Get_dimL(), A.Get_dimC(), B.Get_map(), B.Get_dimL(), B.Get_dimC());
 	X.Set_map(temp);
 	X.Set_dimL(A.Get_dimL());
@@ -86,8 +98,13 @@ Matrice Soustraction(string nom, Matrice A, Matrice B)
 
 Matrice Multiplication(string nom, Matrice A, Matrice B)
 {
+
+	if(A.Get_dimC() != B.Get_dimL()) 
+	{
+		Matrice Matfail("fail");
+		return Matfail;
+	}
 	Matrice X(nom);
-	if(A.Get_dimC() != B.Get_dimL()) return NULL;
 
 	map<pair<int, int>, int> temp = MULTIPLICATION(A.Get_map(), A.Get_dimL(), A.Get_dimC(), B.Get_map(), B.Get_dimL(), B.Get_dimC());
 	X.Set_map(temp);
