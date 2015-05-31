@@ -24,4 +24,6 @@ int rand_entre_min_et_max(int min, int max);
 
 void generer_mat_aleatoire(int pourcentage_zero);
 
+void generer_mat_aleatoire_taille_fixe(int nbLigne,int nbCol, int pourcentage_zero);
+
 #endif
