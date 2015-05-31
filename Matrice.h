@@ -37,10 +37,10 @@ class Matrice
 		bool Affichage();
 };
 
-Matrice Addition		(string nom, Matrice& A, Matrice& B);
-Matrice Soustraction	(string nom, Matrice& A, Matrice& B);
-Matrice Multiplication	(string nom, Matrice& A, Matrice& B);
-Matrice Transposee		(string nom, Matrice& A);
+Matrice Addition		(string nom, Matrice A, Matrice B);
+Matrice Soustraction	(string nom, Matrice A, Matrice B);
+Matrice Multiplication	(string nom, Matrice A, Matrice B);
+Matrice Transposee		(string nom, Matrice A);
 
 
 #endif

@@ -8,8 +8,36 @@
 
 using namespace std;
 
-
 int main()
+{
+    Matrice A("A",8,12);
+    Matrice B("B",8,12);
+    Matrice C("C",12,16);
+    for(int i=0; i<8; ++i)
+    {
+        for(int j=0; j<12; ++j)
+        {
+            A.Insertion(i, j, i+j);
+            B.Insertion(i, j, i*j);
+        }
+    }
+    
+    for(int i=0; i<12; ++i)
+    {
+        for(int j=0; j<16; ++j)
+        {
+            A.Insertion(i, j, i+j);
+        }
+    }
+    A.Affichage();
+    B.Affichage();
+    C.Affichage();
+    Matrice D = Addition("D",A,B);
+    D.Affichage();
+
+    return 0;
+}
+/*int main()
 {
     map <pair<int, int>, int> A;
     map <pair<int, int>, int> B;
@@ -163,5 +191,5 @@ int main()
     }
 
         return 0;
-}
+}*/
 	
