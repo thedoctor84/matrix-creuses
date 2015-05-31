@@ -114,11 +114,11 @@ int main()
                 Res = SOUSTRACTION(A, dimLA, dimCA, B, dimLB, dimCB);
                 dimLRes = dimLA + dimLB;
                 dimCRes = dimCA + dimCB;
-                Affiche(Res, dimLRes, dimCRes);
-                cout << endl;
                 Affiche(A, dimLA, dimCA);
                 cout << endl;
                 Affiche(B, dimLB, dimCB);
+                cout << endl;
+                Affiche(Res, dimLRes, dimCRes);
             }
             else
             {
@@ -137,10 +137,10 @@ int main()
         if(test == true)
         {
             Res = TRANSPOSEE(A);
-            dimLRes = dimLA + dimLB;
-            Affiche(Res, dimLRes, dimCRes);
-            cout << endl;
             Affiche(A, dimLA, dimCA);
+            cout << endl;
+            Affiche(Res, dimLA, dimCA);
+            
 
         }
         else
