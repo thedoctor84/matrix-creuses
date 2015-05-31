@@ -13,12 +13,14 @@ int main()
     Matrice A("A",8,12);
     Matrice B("B",8,12);
     Matrice C("C",12,16);
+
+    bool test(false);
     for(int i=0; i<8; ++i)
     {
         for(int j=0; j<12; ++j)
         {
-            A.Insertion(i, j, i+j);
-            B.Insertion(i, j, i*j);
+            test = A.Insertion(i, j, i+j);
+            test = B.Insertion(i, j, i*j);
         }
     }
     
@@ -26,14 +28,14 @@ int main()
     {
         for(int j=0; j<16; ++j)
         {
-            A.Insertion(i, j, i+j);
+            test = C.Insertion(i, j, i+j);
         }
     }
-    A.Affichage();
-    B.Affichage();
-    C.Affichage();
+    test = A.Affichage();
+    test = B.Affichage();
+    test = C.Affichage();
     Matrice D = Addition("D",A,B);
-    D.Affichage();
+    test = D.Affichage();
 
     return 0;
 }
