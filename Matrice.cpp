@@ -27,7 +27,7 @@ bool Matrice::Insertion(int x, int y, int valeur)
 
 	for (it = M.begin(); it != M.end(); it++)
 	{
-		if(it->first.first == x && it->first.second == y) 
+		if(it->first.first == x && it->first.second == y)
 		{
 			M.erase(it);
 		}
@@ -84,6 +84,7 @@ Matrice& Multiplication(string nom, Matrice& A, Matrice& B)
 
 Matrice& Transposee(string nom, Matrice& A)
 {
+	Matrice X(nom);
 	X.M = TRANSPOSEE(A.M);
 	X.dimL = A.dimL;
 	X.dimC = A.dimC;
