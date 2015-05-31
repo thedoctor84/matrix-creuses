@@ -2,3 +2,4 @@
 #include "Mat_aleatoire.h"
 #include "Operation.h"
 #include "pickfich.h"
+#include "Matrice.h"
