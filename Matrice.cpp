@@ -26,13 +26,17 @@ using namespace std;
 Matrice::Matrice(string nom)
 {
 	fichier = nom;
-	int dimL = 0;
-	int dimC = 0;
-	int nbrElemNN = 0;
-	if(!Chargement(fichier, M, dimL, dimC, nbrElemNN))
-	{
+	int dimL(0);
+	int dimC(0);
+	int nbrElemNN(0);
+	Chargement(fichier, M, dimL, dimC, nbrElemNN);
+}
 
-	}
+Matrice::Matrice(string nom, int x, int y)
+{
+	fichier = nom;
+	int dimL = x;
+	int dimC = y;
 }
 
 
@@ -59,7 +63,7 @@ bool Matrice::Insertion(int x, int y, int valeur)
 			M.erase(it);
 		}
 	}
-
+	++nbrElemNN;
 	M.insert(pair<pair<int, int>, int> (make_pair(x, y), valeur));
 	Sauvegarde(fichier, M, dimL, dimC);
 	return true;
@@ -105,9 +109,7 @@ Matrice Addition(string nom, Matrice A, Matrice B)
 	{
 		Matrice Matfail("fail");
 		return Matfail;
-
 	}
-
 	Matrice X(nom);
 	map<pair<int, int>, int> temp = ADDITION(A.Get_map(), A.Get_dimL(), A.Get_dimC(), B.Get_map(), B.Get_dimL(), B.Get_dimC());
 	X.Set_map(temp);
@@ -160,7 +162,6 @@ Matrice Multiplication(string nom, Matrice A, Matrice B)
 		return Matfail;
 	}
 	Matrice X(nom);
-
 	map<pair<int, int>, int> temp = MULTIPLICATION(A.Get_map(), A.Get_dimL(), A.Get_dimC(), B.Get_map(), B.Get_dimL(), B.Get_dimC());
 	X.Set_map(temp);
 	X.Set_dimL(A.Get_dimL());
