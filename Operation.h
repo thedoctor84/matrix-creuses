@@ -3,8 +3,8 @@
  * \author		Rémi Drissi
  * \version		4.0
  * \date		29 mai 2015
- * \brief		Fichier qui regroupe les différentes opérations applicables aux matrices
- * \details		Contient les fonctions décrites dans Operation.cpp
+ * \brief		Fichier qui regroupe les différentes opérations applicables aux matrices.
+ * \details		Contient les fonctions décrites dans Operation.cpp.
  */
 
 #ifndef _OPERATION_H_

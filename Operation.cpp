@@ -15,7 +15,7 @@ using namespace std;
  * \brief	Fonction qui transpose une matrice
  * \details	Parcourt la matrice pour inverser sa pair d'indices
  * \param	A			Matrice qui va être transposée
- * \return	Retourne la matrice créée précédemment
+ * \return	Retourne la matrice créée précédemment.
  */
 map<pair<int, int>, int> TRANSPOSEE(map<pair<int, int>, int> A)
 {
