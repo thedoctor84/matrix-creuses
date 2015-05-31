@@ -12,8 +12,8 @@ int main()
 {
     map <pair<int, int>, int> A;
     map <pair<int, int>, int> B;
-
     map <pair<int, int>, int> Res;
+    
     int dimLA;
     int dimCA;
     int dimLRes;
