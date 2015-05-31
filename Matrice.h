@@ -5,6 +5,16 @@
 
 using namespace std;
 
+/**
+ * \file      Matrice.h
+ * \author    Rémi Drissi
+ * \version   4.0
+ * \date      29 mai 2015
+ * \brief     fichier Matrice.h
+ *
+ * \details   Contient les attributs et les prototypes des fonctions.
+ */
+
 class Matrice
 {
 	string fichier;
