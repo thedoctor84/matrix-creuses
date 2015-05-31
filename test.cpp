@@ -40,7 +40,6 @@ int main()
         cin >> choix;
         cin.clear(); // Pour eviter les erreurs sur le cin, effacer les bits d'erreurs 
     	cin.ignore(10000, '\n'); // supprimer la ligne erronée dans le buffer
-
     }
 
     if(choix == 1)
