@@ -1,10 +1,20 @@
-all: main
+all: matCreuse testMatCreuse
 
-main: main.o Operation.o pickfich.o Mat_aleatoire.o flots.o
-	g++ -o test main.o Operation.o pickfich.o Mat_aleatoire.o flots.o
+testMatCreuse: libmatcreuse.a test.cpp
+	g++ -o testMatCreuse test.cpp -I . -L . -lmatcreuse
+
+matCreuse: libmatcreuse.a main.cpp
+	g++ -o matCreuse main.cpp -I . -L . -lmatcreuse
+
+
+# A SUPPR ! main: main.o Operation.o pickfich.o Mat_aleatoire.o flots.o
+#	g++ -o test main.o Operation.o pickfich.o Mat_aleatoire.o flots.o
 	
-main.o: main.cpp Operation.h pickfich.h Mat_aleatoire.h flots.h
-	g++ -o main.o -c main.cpp
+#A SUPPR ! main.o: main.cpp Operation.h pickfich.h Mat_aleatoire.h flots.h
+#	g++ -o main.o -c main.cpp
+
+libmatcreuse.a : Operation.o pickfich.o Mat_aleatoire.o flots.o 
+	ar rv libmatcreuse.a Operation.o pickfich.o Mat_aleatoire.o flots.o 
  
 Operation.o: Operation.cpp Operation.h
 	g++ -o Operation.o -c Operation.cpp 
@@ -22,4 +32,4 @@ clean:
 	rm -rf *.o
  
 mrproper: clean
-	rm -rf test
+	rm -rf *.o libmatcreuse.a matCreuse testMatCreuse

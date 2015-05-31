@@ -1,11 +1,8 @@
 #include <iostream>
-#include <map>
-#include <string>
-#include "Operation.h"
-#include "pickfich.h"
-#include "flots.h"
-#include "Mat_aleatoire.h"
-#define BASIC   "\033[01;30m"
+#include "libmatcreuse.h"
+
+#define BASIC   "\033[00;00m"
+#define BOLD    "\033[01m" 
 #define RED     "\033[01;31m"
 #define GREEN   "\033[01;32m"
 #define YELLOW  "\033[01;33m"
@@ -34,7 +31,7 @@ int main()
 {
     int ope;
     int choix;
-    int i;
+    int i = 0;
 
     map <pair<int, int>, int> A;
     map <pair<int, int>, int> B;
@@ -54,18 +51,24 @@ int main()
     int nbrElemNN2;
     int nbrElemNN3;
 
-    cout << "Bienvenue dans le programme d'interaction des MatrLib" << endl;
+    cout << endl << endl << BOLD << "Bienvenue dans le programme d'interaction des Matrices creuses !" << endl;
     cout << endl;
 
-        cout << "Veuillez selectionner une operation parmi :" << endl;
-        cout << RED <<"1) ADDITION" << GREEN << " 2) MULTIPLICATION" << BLUE << " 3) SOUSTRACTION" << YELLOW << " 4) TRANSPOSEE"<< BASIC << endl;
-        cin >>ope;
-        cin.clear(); // Pour eviter les erreurs sur le cin, effacer les bits d'erreurs 
-        cin.ignore(10000, '\n'); // supprimer la ligne erronée dans le buffer
+    cout << "Veuillez selectionner une operation parmi :" << endl << endl;
+    cout << RED <<"1) ADDITION" << endl << GREEN << " 2) MULTIPLICATION" << endl <<  BLUE << " 3) SOUSTRACTION" << endl << YELLOW << " 4) TRANSPOSEE"<< BASIC << endl;
+    cout << "Entrez votre choix :";
+
+        do
+        {
+            cin >> ope;
+            cin.clear(); // Pour eviter les erreurs sur le cin, effacer les bits d'erreurs 
+            cin.ignore(10000, '\n'); // supprimer la ligne erronée dans le buffer
+            if(ope != 1 && ope != 2 && ope != 3 && ope != 4) cout << "Erreur : Veuillez entrer un choix entre 1 et 4 !";
+        }
+        while(ope != 1 && ope != 2 && ope != 3 && ope != 4);
 
         if(ope == 1 || ope == 2 || ope == 3)
         {
-
 
             for(i = 0; i<2; i++)
             {
@@ -76,7 +79,8 @@ int main()
                     cin.clear(); // Pour eviter les erreurs sur le cin, effacer les bits d'erreurs 
                     cin.ignore(10000, '\n'); // supprimer la ligne erronée dans le buffer
 
-                }while(choix != 1 || choix != 2);
+                }
+                while(choix != 1 && choix != 2);
 
                 if(choix == 1 && i == 0)
                 {
@@ -84,19 +88,19 @@ int main()
                     Chargement(rech[0], A, dimLA, dimCA,nbrElemNN1);
                 }
 
-                if(choix == 1 && i == 1)
+                else if(choix == 1 && i == 1)
                 {
                     rech = recherchefich(1);
                     Chargement(rech[0], B, dimLB, dimCB ,nbrElemNN2);
                 }
 
-                if(choix == 2 && i == 0)
+                else if(choix == 2 && i == 0)
                 {
                     rech = recherchefich(1);
                     Chargement(rech[0], A, dimLB, dimCB ,nbrElemNN2);
                 }
 
-                if(choix == 2 && i == 1)
+                else if(choix == 2 && i == 1)
                 {
                     rech = recherchefich(1);
                     Chargement(rech[0], B, dimLB, dimCB ,nbrElemNN2);
@@ -123,8 +127,7 @@ int main()
                 Res = SOUSTRACTION(A, dimLA, dimCA, B, dimLB, dimCB),
                 Affiche(Res, dimLRes,dimCRes);
                 break;
-
-            }    
+            }
         }
 
         if(ope == 4)
@@ -136,7 +139,7 @@ int main()
                 cin.clear(); // Pour eviter les erreurs sur le cin, effacer les bits d'erreurs 
                 cin.ignore(10000, '\n'); // supprimer la ligne erronée dans le buffer
 
-            }while(choix != 1 || choix != 2);
+            }while(choix != 1 && choix != 2);
 
             if(choix == 1)
             {
@@ -160,7 +163,7 @@ int main()
         cin.clear(); // Pour eviter les erreurs sur le cin, effacer les bits d'erreurs 
         cin.ignore(10000, '\n'); // supprimer la ligne erronée dans le buffer
 
-        while(choice != 'o' || choice != 'n')
+        while(choice != 'o' && choice != 'n')
         {
             cout << "Veuillez entrer correctement votre choix :" << endl;
             cin >> choice;
