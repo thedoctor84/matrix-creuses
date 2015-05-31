@@ -1,5 +1,5 @@
-#include "flots.h"
+#include "Flots.h"
 #include "Mat_aleatoire.h"
 #include "Operation.h"
-#include "pickfich.h"
+#include "Pickfich.h"
 #include "Matrice.h"
