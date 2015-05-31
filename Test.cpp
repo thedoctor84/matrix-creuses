@@ -83,8 +83,8 @@ int main()
             if(test == true)
             {
                 Res = MULTIPLICATION(A, dimLA, dimCA, B, dimLB, dimCB);
-                dimLRes = dimLA + dimLB;
-                dimCRes = dimCA + dimCB;
+                dimLRes = dimLA;
+                dimCRes = dimCB;
                 Affiche(A, dimLA, dimCA);
                 cout << endl;
                 Affiche(B, dimLB, dimCB);
