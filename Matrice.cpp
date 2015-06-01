@@ -26,9 +26,9 @@ using namespace std;
 Matrice::Matrice(string nom)
 {
 	fichier = nom;
-	dimL = 0;
-	dimC = 0;
-	nbrElemNN = 0;
+	int dimL(0);
+	int dimC(0);
+	int nbrElemNN(0);
 	Chargement(fichier, M, dimL, dimC, nbrElemNN);
 }
 
@@ -39,14 +39,13 @@ Matrice::Matrice(string nom)
   * \param	x			indice en ligne
    * \param	y			indice en colonne.
  */
+
 Matrice::Matrice(string nom, int x, int y)
 {
 	fichier = nom;
 	dimL = x;
 	dimC = y;
 	nbrElemNN = 0;
-	if(!Sauvegarde(fichier, M, dimL, dimC))
-	cerr << "erreur!";
 }
 
 
@@ -64,18 +63,17 @@ Matrice::~Matrice() {}
 bool Matrice::Insertion(int x, int y, int valeur)
 {
 	if (x < 0 || y < 0 || x > dimL || y > dimC) return false;
-	bool existe_deja;
+
 	map <pair<int, int>, int>::iterator it;
 	for (it = M.begin(); it != M.end(); it++)
 	{
 		if(it->first.first == x && it->first.second == y)
 		{
-			existe_deja = true;
+			M.erase(it);
 		}
 	}
-	if(!existe_deja) M.insert(pair<pair<int, int>, int> (make_pair(x, y), valeur));
 	++nbrElemNN;
-	Sauvegarde(fichier, M, dimL, dimC);
+	M.insert(pair<pair<int, int>, int> (make_pair(x, y), valeur));
 	return true;
 }
 
@@ -197,3 +195,11 @@ Matrice Transposee(string nom, Matrice A)
 	Sauvegarde(nom, temp, X.Get_dimL(), X.Get_dimC());
 	return X;
 }
+
+void Matrice::Save()
+{
+	Sauvegarde(fichier, M, dimL, dimC);
+}
+
+
+

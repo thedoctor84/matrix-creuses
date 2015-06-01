@@ -35,6 +35,7 @@ class Matrice
 		map<pair<int, int>, int> Get_map();
 		bool Insertion(int, int, int);
 		bool Affichage();
+		void Save();
 };
 
 Matrice Addition		(string nom, Matrice A, Matrice B);
