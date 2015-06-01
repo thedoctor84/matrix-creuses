@@ -124,6 +124,7 @@ void Affiche(map <pair<int, int>, int> matrice, int dimL, int dimC)
 		cerr<<"Erreur, la matrice est vide !"<<endl;
 		return;
 	}
+	cerr << BLUE << "dimL : " << RED << dimL << BLUE << " \tdimC : " << RED << dimC << endl;
 	map <pair<int,int>, int>::iterator it;
 	it = matrice.begin();
 	for(int i = 0; i < dimL; ++i)
@@ -140,7 +141,7 @@ void Affiche(map <pair<int, int>, int> matrice, int dimL, int dimC)
 		}
 		cout<<endl;
 	}
-
+	cout << endl;
 	//Affichage en ligne
 	/*for (it = matrice.begin();it != matrice.end(); it++)
     {
