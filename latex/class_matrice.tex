@@ -6,27 +6,20 @@
 \item 
 \hyperlink{class_matrice_a2960355d096a3415ca1e49cbf26a211b}{Matrice} (string)
 \begin{DoxyCompactList}\small\item\em Constructeur de \hyperlink{class_matrice}{Matrice}. \end{DoxyCompactList}\item 
-\hypertarget{class_matrice_a5e67677bc4ec3e776030920a140b5e45}{{\bfseries Matrice} (string, int, int)}\label{class_matrice_a5e67677bc4ec3e776030920a140b5e45}
-
-\item 
-\hypertarget{class_matrice_adf18304a72b2e828d99bfe4e1d0ce748}{void {\bfseries Set\-\_\-dim\-L} (int)}\label{class_matrice_adf18304a72b2e828d99bfe4e1d0ce748}
-
-\item 
-\hypertarget{class_matrice_a69305eca1fab66d359d683bd036aa4dc}{void {\bfseries Set\-\_\-dim\-C} (int)}\label{class_matrice_a69305eca1fab66d359d683bd036aa4dc}
-
-\item 
-\hypertarget{class_matrice_a752aaa50023c03f41ac68c795b2ae211}{void {\bfseries Set\-\_\-map} (map$<$ pair$<$ int, int $>$, int $>$)}\label{class_matrice_a752aaa50023c03f41ac68c795b2ae211}
-
-\item 
-\hypertarget{class_matrice_ae312a978bd106c90dfd2216ebfd031df}{int {\bfseries Get\-\_\-dim\-L} ()}\label{class_matrice_ae312a978bd106c90dfd2216ebfd031df}
-
-\item 
-\hypertarget{class_matrice_ab92e39a9889650bc141fa0abe44fce23}{int {\bfseries Get\-\_\-dim\-C} ()}\label{class_matrice_ab92e39a9889650bc141fa0abe44fce23}
-
-\item 
-\hypertarget{class_matrice_ad64fd72e30249645f9edf19eaaeb3eac}{map$<$ pair$<$ int, int $>$, int $>$ {\bfseries Get\-\_\-map} ()}\label{class_matrice_ad64fd72e30249645f9edf19eaaeb3eac}
-
-\item 
+\hyperlink{class_matrice_a5e67677bc4ec3e776030920a140b5e45}{Matrice} (string, int, int)
+\begin{DoxyCompactList}\small\item\em Constructeur de \hyperlink{class_matrice}{Matrice}. \end{DoxyCompactList}\item 
+void \hyperlink{class_matrice_adf18304a72b2e828d99bfe4e1d0ce748}{Set\-\_\-dim\-L} (int)
+\begin{DoxyCompactList}\small\item\em Change le nombre de lignes de la matrice par l'int dim. \end{DoxyCompactList}\item 
+void \hyperlink{class_matrice_a69305eca1fab66d359d683bd036aa4dc}{Set\-\_\-dim\-C} (int)
+\begin{DoxyCompactList}\small\item\em Change le nombre de colonnes de la matrice par l'int dim. \end{DoxyCompactList}\item 
+void \hyperlink{class_matrice_a752aaa50023c03f41ac68c795b2ae211}{Set\-\_\-map} (map$<$ pair$<$ int, int $>$, int $>$)
+\begin{DoxyCompactList}\small\item\em Change la map de l'objet par X. \end{DoxyCompactList}\item 
+int \hyperlink{class_matrice_ae312a978bd106c90dfd2216ebfd031df}{Get\-\_\-dim\-L} ()
+\begin{DoxyCompactList}\small\item\em Renvoie le nombre de lignes. \end{DoxyCompactList}\item 
+int \hyperlink{class_matrice_ab92e39a9889650bc141fa0abe44fce23}{Get\-\_\-dim\-C} ()
+\begin{DoxyCompactList}\small\item\em Renvoie le nombre de colonne. \end{DoxyCompactList}\item 
+map$<$ pair$<$ int, int $>$, int $>$ \hyperlink{class_matrice_ad64fd72e30249645f9edf19eaaeb3eac}{Get\-\_\-map} ()
+\begin{DoxyCompactList}\small\item\em Renvoie la map de la matrice. \end{DoxyCompactList}\item 
 bool \hyperlink{class_matrice_aa2765088d37b21cfe4dd3ae0dd80f542}{Insertion} (int, int, int)
 \begin{DoxyCompactList}\small\item\em Fonction Insertion. \end{DoxyCompactList}\item 
 bool \hyperlink{class_matrice_ae0a5c611e4742547471b20e035660869}{Affichage} ()
@@ -50,6 +43,28 @@ initialise le nom et les dimension de la matrice et test l'existence du fichier.
 {\em nom} & nom de la \hyperlink{class_matrice}{Matrice}. \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_matrice_a5e67677bc4ec3e776030920a140b5e45}{\index{Matrice@{Matrice}!Matrice@{Matrice}}
+\index{Matrice@{Matrice}!Matrice@{Matrice}}
+\subsubsection[{Matrice}]{\setlength{\rightskip}{0pt plus 5cm}Matrice\-::\-Matrice (
+\begin{DoxyParamCaption}
+\item[{string}]{nom, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{class_matrice_a5e67677bc4ec3e776030920a140b5e45}
+
+
+Constructeur de \hyperlink{class_matrice}{Matrice}. 
+
+initialise le nom et les dimension de la matrice selon des coordonnées donnés en argument. 
+\begin{DoxyParams}{Parameters}
+{\em nom} & nom de la \hyperlink{class_matrice}{Matrice}. \\
+\hline
+{\em x} & indice en ligne \\
+\hline
+{\em y} & indice en colonne. \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
@@ -66,6 +81,48 @@ Fonction Affichage.
 
 Affiche la matrice. \begin{DoxyReturn}{Returns}
 Retourne un booléen selon si on peut afficher ou pas et affiche si oui. 
+\end{DoxyReturn}
+\hypertarget{class_matrice_ab92e39a9889650bc141fa0abe44fce23}{\index{Matrice@{Matrice}!Get\-\_\-dim\-C@{Get\-\_\-dim\-C}}
+\index{Get\-\_\-dim\-C@{Get\-\_\-dim\-C}!Matrice@{Matrice}}
+\subsubsection[{Get\-\_\-dim\-C}]{\setlength{\rightskip}{0pt plus 5cm}int Matrice\-::\-Get\-\_\-dim\-C (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_matrice_ab92e39a9889650bc141fa0abe44fce23}
+
+
+Renvoie le nombre de colonne. 
+
+\begin{DoxyReturn}{Returns}
+Retourne le nombre de colonne de la matrice (int) 
+\end{DoxyReturn}
+\hypertarget{class_matrice_ae312a978bd106c90dfd2216ebfd031df}{\index{Matrice@{Matrice}!Get\-\_\-dim\-L@{Get\-\_\-dim\-L}}
+\index{Get\-\_\-dim\-L@{Get\-\_\-dim\-L}!Matrice@{Matrice}}
+\subsubsection[{Get\-\_\-dim\-L}]{\setlength{\rightskip}{0pt plus 5cm}int Matrice\-::\-Get\-\_\-dim\-L (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_matrice_ae312a978bd106c90dfd2216ebfd031df}
+
+
+Renvoie le nombre de lignes. 
+
+\begin{DoxyReturn}{Returns}
+Retourne le nombre de lignes de la matrice (int) 
+\end{DoxyReturn}
+\hypertarget{class_matrice_ad64fd72e30249645f9edf19eaaeb3eac}{\index{Matrice@{Matrice}!Get\-\_\-map@{Get\-\_\-map}}
+\index{Get\-\_\-map@{Get\-\_\-map}!Matrice@{Matrice}}
+\subsubsection[{Get\-\_\-map}]{\setlength{\rightskip}{0pt plus 5cm}map$<$ pair$<$ int, int $>$, int $>$ Matrice\-::\-Get\-\_\-map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_matrice_ad64fd72e30249645f9edf19eaaeb3eac}
+
+
+Renvoie la map de la matrice. 
+
+\begin{DoxyReturn}{Returns}
+renvoie le map de l'objet matrice 
 \end{DoxyReturn}
 \hypertarget{class_matrice_aa2765088d37b21cfe4dd3ae0dd80f542}{\index{Matrice@{Matrice}!Insertion@{Insertion}}
 \index{Insertion@{Insertion}!Matrice@{Matrice}}
@@ -92,6 +149,54 @@ insère une valeur dans une matrice selon ses coordonnées.
 \begin{DoxyReturn}{Returns}
 Retourne un booléen selon si on peut insérer ou pas et insère si oui. 
 \end{DoxyReturn}
+\hypertarget{class_matrice_a69305eca1fab66d359d683bd036aa4dc}{\index{Matrice@{Matrice}!Set\-\_\-dim\-C@{Set\-\_\-dim\-C}}
+\index{Set\-\_\-dim\-C@{Set\-\_\-dim\-C}!Matrice@{Matrice}}
+\subsubsection[{Set\-\_\-dim\-C}]{\setlength{\rightskip}{0pt plus 5cm}void Matrice\-::\-Set\-\_\-dim\-C (
+\begin{DoxyParamCaption}
+\item[{int}]{dim}
+\end{DoxyParamCaption}
+)}}\label{class_matrice_a69305eca1fab66d359d683bd036aa4dc}
+
+
+Change le nombre de colonnes de la matrice par l'int dim. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dim} & Le nouveau nombre de colonnes \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_matrice_adf18304a72b2e828d99bfe4e1d0ce748}{\index{Matrice@{Matrice}!Set\-\_\-dim\-L@{Set\-\_\-dim\-L}}
+\index{Set\-\_\-dim\-L@{Set\-\_\-dim\-L}!Matrice@{Matrice}}
+\subsubsection[{Set\-\_\-dim\-L}]{\setlength{\rightskip}{0pt plus 5cm}void Matrice\-::\-Set\-\_\-dim\-L (
+\begin{DoxyParamCaption}
+\item[{int}]{dim}
+\end{DoxyParamCaption}
+)}}\label{class_matrice_adf18304a72b2e828d99bfe4e1d0ce748}
+
+
+Change le nombre de lignes de la matrice par l'int dim. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dim} & Le nouveau nombre de lignes \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_matrice_a752aaa50023c03f41ac68c795b2ae211}{\index{Matrice@{Matrice}!Set\-\_\-map@{Set\-\_\-map}}
+\index{Set\-\_\-map@{Set\-\_\-map}!Matrice@{Matrice}}
+\subsubsection[{Set\-\_\-map}]{\setlength{\rightskip}{0pt plus 5cm}void Matrice\-::\-Set\-\_\-map (
+\begin{DoxyParamCaption}
+\item[{map$<$ pair$<$ int, int $>$, int $>$}]{X}
+\end{DoxyParamCaption}
+)}}\label{class_matrice_a752aaa50023c03f41ac68c795b2ae211}
+
+
+Change la map de l'objet par X. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & la nouvelle map \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}

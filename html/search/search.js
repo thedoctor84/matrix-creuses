@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   0: "acfgimorst",
   1: "m",
   2: "s",
-  3: "fmo",
+  3: "fmot",
   4: "acgimrst",
   5: "m"
 };
