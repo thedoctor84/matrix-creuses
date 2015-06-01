@@ -44,7 +44,8 @@ Matrice::Matrice(string nom, int x, int y)
 	fichier = nom;
 	int dimL = x;
 	int dimC = y;
-	Chargement(fichier, M, dimL, dimC, nbrElemNN);
+	nbrElemNN = 0;
+	Sauvegarde(fichier, M, dimL, dimC);
 }
 
 
