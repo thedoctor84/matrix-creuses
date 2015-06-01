@@ -15,7 +15,7 @@ int main()
     Matrice C("C",12,16);
 
     bool test(false);
-    /*for(int i=0; i<8; ++i)
+    for(int i=0; i<8; ++i)
     {
         for(int j=0; j<12; ++j)
         {
@@ -30,12 +30,18 @@ int main()
         {
             test = C.Insertion(i, j, i+j);
         }
-    }*/
+    }
     test = A.Affichage();
     test = B.Affichage();
     test = C.Affichage();
-    //Matrice D = Addition("D",A,B);
-    //test = D.Affichage();
+    Matrice D = Addition("D",A,B);
+    test = D.Affichage();
+    Matrice E = Soustraction("E",B,A);
+    test = E.Affichage();
+    Matrice F = Multiplication("F",A,C);
+    test = F.Affichage();
+    Matrice G = Transposee("G",F);
+    test = G.Affichage();
 
     return 0;
 }

@@ -191,8 +191,8 @@ Matrice Transposee(string nom, Matrice A)
 	Matrice X(nom);
 	map<pair<int, int>, int> temp = TRANSPOSEE(A.Get_map());
 	X.Set_map(temp);
-	X.Set_dimL(A.Get_dimL());
-	X.Set_dimC(A.Get_dimC());
+	X.Set_dimL(A.Get_dimC());
+	X.Set_dimC(A.Get_dimL());
 	Sauvegarde(nom, temp, X.Get_dimL(), X.Get_dimC());
 	return X;
 }
