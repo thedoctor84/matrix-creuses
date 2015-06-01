@@ -99,12 +99,12 @@ bool Sauvegarde(string smatr, map <pair<int, int>, int> matrice, int dimL, int d
 			save<<it->first.first <<" "<< it->first.second <<" "<<it->second<<endl; 
 		}
 		save.close();
-		return false;
+		return true;
 	}
 	else
 	{
 		cerr <<"Erreur lors de la creation du fichier !" <<endl;
-		return true;
+		return false;
 	}
 }
 
