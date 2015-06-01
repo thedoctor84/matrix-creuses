@@ -1,4 +1,10 @@
 # matrix-creuses
-projet c++ Matrices creuses TEAM CERI
 
-blblabla
+Projet c++ d'une librairie traitant des matrices creuses
+
+Realise par : 
+
+Remi Drissi 
+Gregoire Esteban 
+Antoine Letourneur 
+Imran Loudghiri 
