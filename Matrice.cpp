@@ -91,15 +91,54 @@ bool Matrice::Affichage()
 	return true;
 }
 
+/**
+ * \brief	Change le nombre de lignes de la matrice par l'int dim
+ * \details	
+ * \param	dim Le nouveau nombre de lignes
+ */
+
 void Matrice::Set_dimL(int dim) {dimL = dim;}
+
+/**
+ * \brief	Change le nombre de colonnes de la matrice par l'int dim
+ * \details	
+ * \param	dim Le nouveau nombre de colonnes
+ */
+
 
 void Matrice::Set_dimC(int dim) {dimC = dim;}
 
+/**
+ * \brief	Change la map de l'objet par X
+ * \details	
+ * \param	X la nouvelle map
+ */
+
+
 void Matrice::Set_map(map<pair<int, int>, int> X) {M = X;}
+
+/**
+ * \brief	Renvoie le nombre de lignes
+ * \details	
+ * \return Retourne le nombre de lignes de la matrice (int)
+ */
+
 
 int  Matrice::Get_dimL() {return dimL;}
 
+/**
+ * \brief	Renvoie le nombre de colonne
+ * \details	
+ * \return Retourne le nombre de colonne de la matrice (int)
+ */
+
 int  Matrice::Get_dimC() {return dimC;}
+
+/**
+ * \brief	Renvoie la map de la matrice
+ * \details	
+ * \return renvoie le map de l'objet matrice
+ */
 
 map<pair<int, int>, int> Matrice::Get_map() {return M;}
 
