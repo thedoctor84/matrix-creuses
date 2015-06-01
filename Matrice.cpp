@@ -45,7 +45,8 @@ Matrice::Matrice(string nom, int x, int y)
 	int dimL = x;
 	int dimC = y;
 	nbrElemNN = 0;
-	Sauvegarde(fichier, M, dimL, dimC);
+	if(!Sauvegarde(fichier, M, dimL, dimC))
+	cerr << "erreur!";
 }
 
 
@@ -85,7 +86,7 @@ bool Matrice::Insertion(int x, int y, int valeur)
  */
 bool Matrice::Affichage()
 {
-	if(nbrElemNN < 0) return false;
+	if(nbrElemNN <= 0) return false;
 	
 	Affiche(M, dimL, dimC);
 	return true;
