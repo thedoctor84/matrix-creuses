@@ -26,9 +26,9 @@ using namespace std;
 Matrice::Matrice(string nom)
 {
 	fichier = nom;
-	int dimL(0);
-	int dimC(0);
-	int nbrElemNN(0);
+	dimL = 0;
+	dimC = 0;
+	nbrElemNN = 0;
 	Chargement(fichier, M, dimL, dimC, nbrElemNN);
 }
 
@@ -42,8 +42,8 @@ Matrice::Matrice(string nom)
 Matrice::Matrice(string nom, int x, int y)
 {
 	fichier = nom;
-	int dimL = x;
-	int dimC = y;
+	dimL = x;
+	dimC = y;
 	nbrElemNN = 0;
 	if(!Sauvegarde(fichier, M, dimL, dimC))
 	cerr << "erreur!";
@@ -64,17 +64,17 @@ Matrice::~Matrice() {}
 bool Matrice::Insertion(int x, int y, int valeur)
 {
 	if (x < 0 || y < 0 || x > dimL || y > dimC) return false;
-
+	bool existe_deja;
 	map <pair<int, int>, int>::iterator it;
 	for (it = M.begin(); it != M.end(); it++)
 	{
 		if(it->first.first == x && it->first.second == y)
 		{
-			M.erase(it);
+			existe_deja = true;
 		}
 	}
+	if(!existe_deja) M.insert(pair<pair<int, int>, int> (make_pair(x, y), valeur));
 	++nbrElemNN;
-	M.insert(pair<pair<int, int>, int> (make_pair(x, y), valeur));
 	Sauvegarde(fichier, M, dimL, dimC);
 	return true;
 }
