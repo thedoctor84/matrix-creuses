@@ -4,9 +4,17 @@
 #include "libmatcreuse.h"
 #include <unistd.h>
 
-
-
 using namespace std;
+
+/**
+ * \file      Test.cpp
+ * \author    Rémi Drissi
+ * \version   4.0
+ * \date      29 mai 2015
+ * \brief     fichier Test.cpp
+ *
+ * \details   Contient les tests des opérations effectué par la classe Matrice
+ */
 
 int main()
 {
