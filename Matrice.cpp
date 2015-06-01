@@ -26,9 +26,9 @@ using namespace std;
 Matrice::Matrice(string nom)
 {
 	fichier = nom;
-	int dimL(0);
-	int dimC(0);
-	int nbrElemNN(0);
+	dimL = 0;
+	dimC = 0;
+	nbrElemNN =0;
 	Chargement(fichier, M, dimL, dimC, nbrElemNN);
 }
 
@@ -74,6 +74,7 @@ bool Matrice::Insertion(int x, int y, int valeur)
 	}
 	++nbrElemNN;
 	M.insert(pair<pair<int, int>, int> (make_pair(x, y), valeur));
+	Sauvegarde(fichier, M, dimL, dimC);
 	return true;
 }
 
@@ -194,11 +195,6 @@ Matrice Transposee(string nom, Matrice A)
 	X.Set_dimC(A.Get_dimC());
 	Sauvegarde(nom, temp, X.Get_dimL(), X.Get_dimC());
 	return X;
-}
-
-void Matrice::Save()
-{
-	Sauvegarde(fichier, M, dimL, dimC);
 }
 
 
