@@ -16,7 +16,7 @@
 #define BLUE "\033[01;34m"
 #define BASIC "\033[00;00m"
 
-using namespace std; /** \namespace std */
+using namespace std;
 
 /**
  * \brief       Charge une matrice à partir d'un fichier texte 
@@ -149,26 +149,3 @@ void Affiche(map <pair<int, int>, int> matrice, int dimL, int dimC)
         cout << it->second << ">" << endl;
     }*/
 }
-
-
-/*int main()
-{
-	int dimC;
-	int dimL;
-	int nbrElemNN;
-	map <pair<int,int>,int> michel;
-	if(!Chargement("4",michel,dimL,dimC,nbrElemNN))
-	{
-		Affiche(michel,dimL,dimC);
-	}
-
-	string name;
-
-	cout <<"Entrez le nom de la Sauvegarde"<<endl;
-	cin >> name;
-	Sauvegarde((name+".txt").c_str(), michel, dimL, dimC);
-	
-	return 0;                 
-}*/
-
-
